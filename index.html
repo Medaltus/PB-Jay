@@ -192,6 +192,46 @@ table.data tr:hover td{background:var(--bg);}
 /* Copy btn */
 .btn-copy{background:transparent;color:var(--navy);border:1px solid var(--border);border-radius:6px;padding:6px 14px;font-family:var(--font-sans);font-size:12px;cursor:pointer;transition:all .15s;margin-top:8px;}
 .btn-copy:hover{background:var(--navy);color:#fff;}
+
+/* ── Log / Insights CSS ─────────────────────────────────────────── */
+.log-upload-panel{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:24px;}
+.log-entry{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:20px;position:relative;overflow:hidden;}
+.log-entry::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;}
+.log-entry.positive::before{background:var(--green);}
+.log-entry.mixed::before{background:var(--sand);}
+.log-entry.watch::before{background:rgba(184,64,64,0.5);}
+.log-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border2);flex-wrap:wrap;gap:10px;}
+.log-date{font-family:var(--font-mono);font-size:11px;color:var(--ink3);background:var(--bg2);padding:4px 10px;border-radius:20px;white-space:nowrap;}
+.log-title{font-family:var(--font-serif);font-size:17px;color:var(--navy);margin-bottom:4px;}
+.log-sources{display:flex;gap:8px;flex-wrap:wrap;}
+.log-source{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.09em;padding:2px 9px;border-radius:20px;background:rgba(107,123,162,0.15);color:var(--navy);}
+.log-metric-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:16px 0;}
+.log-metric{background:var(--bg);border-radius:8px;padding:12px 14px;}
+.lm-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.09em;color:var(--ink3);margin-bottom:5px;}
+.lm-val{font-size:18px;font-weight:600;color:var(--navy);line-height:1;}
+.lm-change{font-size:11px;margin-top:3px;}
+.lm-up{color:var(--green);font-weight:600;}
+.lm-down{color:var(--rose);}
+.lm-flat{color:var(--ink3);}
+.log-findings{margin-top:16px;}
+.log-finding{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border2);font-size:13px;color:var(--ink2);line-height:1.6;}
+.log-finding:last-child{border-bottom:none;}
+.fi{font-size:15px;flex-shrink:0;margin-top:1px;}
+.log-action{margin-top:16px;padding:12px 16px;border-radius:8px;font-size:13px;line-height:1.7;}
+.log-action.do{background:var(--teal-light);color:var(--navy);}
+.log-action.watch{background:var(--sand);color:var(--navy);}
+/* Upload zones */
+.upload-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.upload-zone{background:var(--bg);border:2px dashed var(--silver);border-radius:10px;padding:20px 16px;text-align:center;cursor:pointer;transition:all .2s;position:relative;}
+.upload-zone:hover{border-color:var(--navy);background:var(--bg2);}
+.upload-zone.loaded{border-color:var(--green);border-style:solid;background:var(--teal-light);}
+.uz-icon{font-size:24px;margin-bottom:8px;}
+.uz-label{font-weight:600;font-size:13px;color:var(--navy);margin-bottom:3px;}
+.uz-sub{font-size:11.5px;color:var(--ink3);margin-bottom:6px;line-height:1.4;}
+.uz-formats{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink3);padding:2px 8px;background:var(--bg2);border-radius:20px;display:inline-block;}
+.uz-filename{font-size:11px;color:var(--navy);margin-top:8px;font-weight:600;min-height:16px;}
+@media(max-width:700px){.upload-grid{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -219,6 +259,8 @@ table.data tr:hover td{background:var(--bg);}
   <button class="tab-btn" onclick="switchTab('competitors',this)">Competitors</button>
   <button class="tab-btn" onclick="switchTab('listing',this)">Listing Audit</button>
   <button class="tab-btn" onclick="switchTab('reviews',this)">Reviews</button>
+  <button class="tab-btn" onclick="switchTab('ppc',this)">PPC</button>
+  <button class="tab-btn" onclick="switchTab('insights',this)">Insights Log</button>
 </nav>
 
 <!-- ══ OVERVIEW ══ -->
@@ -2623,6 +2665,502 @@ document.addEventListener('DOMContentLoaded', function() {
     p.style.display = p.classList.contains('active') ? 'block' : 'none';
   });
 });
+
+// ── Insights Log Functions ───────────────────────────────────────────────
+const BRAND_CTX_PBJ = `You are an expert Amazon brand analyst for PB & Jay (Pureunbi Corp), a K-beauty skincare brand.
+PRODUCT LINES:
+1. Face Masks (Purenature) — 12 scent variants + 1 twelve-pack · $6.00 · BSR #793 Facial Masks · 4.6★ / 139 reviews
+   CRITICAL: 12-pack (PBJ0025) has Buy Box hijack — rogue seller ~200 units remaining. Reclaim est. 2–4 weeks.
+   Individual variant conv%: Vitamin C 11.1%, Rose 10.7%, Green Tea 12.0%
+2. Makeup Wipes (Cleancare) — 12 scent variants · $7.00 · BSR #125 Makeup Cleansing Wipes · 4.4★ / 27 reviews
+   May: 632 sessions · 57 units · 9.0% conv · $399 revenue
+   Buy Box issues: Vitamin C 23.64%, Rose Water 26.44%
+   Top converters: Charcoal 13.45%, Pomegranate 20%, Collagen 12.1%
+3. Hydrogel Face Mask — single SKU · $20.00 · 5-pack · BSR #9,456 Facial Masks · 4.6★ / 29 reviews
+   May: 27 sessions · 0 units · 0% conv · $0 revenue
+KEY ORGANIC RANKINGS: 0 for face masks (all 57 kws >306) · 0 for wipes (all 54 kws >306) · 3 for hydrogel
+HIGH-PRIORITY KEYWORDS: "mascarilla de colageno" (68.2% ABA, 602 competing) · "quia face mask" (76% ABA, 129 competing) · "individual makeup remover wipes" (68.9% ABA, 748 competing) · "rice water face wipes" (95% ABA, 193 competing)`;
+
+const pbj_uploadedFiles = { br: null, kw: null, ads: null };
+
+function toggleUploadPanel() {
+  const form = document.getElementById('upload-form');
+  const btn  = document.getElementById('upload-toggle-btn');
+  const open = form.style.display === 'none';
+  form.style.display = open ? 'block' : 'none';
+  btn.textContent = open ? '✕ Close' : '+ Upload & Scan';
+  if (open) form.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function triggerUpload(inputId) { document.getElementById(inputId).click(); }
+
+async function handleKwFiles(input) {
+  const files = Array.from(input.files);
+  if (!files.length) return;
+  const zone = document.getElementById('zone-kw');
+  const fname = document.getElementById('fname-kw');
+  fname.textContent = '⏳ Reading ' + files.length + ' file(s)…';
+  zone.classList.remove('loaded');
+  const readFile = f => new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = e => res({ name: f.name, text: e.target.result });
+    r.onerror = () => rej(new Error('Read failed'));
+    r.readAsText(f);
+  });
+  try {
+    const results = await Promise.all(files.map(readFile));
+    const merged = results.length === 1 ? results[0].text : results.map(r => '### File: ' + r.name + '\n' + r.text).join('\n\n');
+    pbj_uploadedFiles.kw = { name: results.map(r => r.name).join(', '), text: merged };
+    fname.textContent = files.length === 1 ? files[0].name : files.length + ' files';
+    zone.classList.add('loaded');
+  } catch(err) { fname.textContent = '⚠ Error: ' + err.message; }
+}
+
+function handleFileSelect(key, input) {
+  const file = input.files[0];
+  if (!file) return;
+  const zone = document.getElementById('zone-' + key);
+  const fname = document.getElementById('fname-' + key);
+  fname.textContent = file.name;
+  zone.classList.add('loaded');
+  const reader = new FileReader();
+  reader.onload = e => { pbj_uploadedFiles[key] = { name: file.name, text: e.target.result }; };
+  reader.onerror = () => { fname.textContent = '⚠ Error reading file'; zone.classList.remove('loaded'); };
+  reader.readAsText(file);
+}
+
+async function runInsightsScan() {
+  const k = getKey();
+  if (!k) { document.getElementById('scan-status').textContent = '⚠ API key required.'; return; }
+  const hasAny = pbj_uploadedFiles.br || pbj_uploadedFiles.kw || pbj_uploadedFiles.ads;
+  if (!hasAny) { document.getElementById('scan-status').textContent = '⚠ Upload at least one file.'; return; }
+  const btn = document.getElementById('scan-btn');
+  const statusEl = document.getElementById('scan-status');
+  btn.disabled = true;
+  document.getElementById('scan-btn-text').textContent = '⏳ Analyzing…';
+  statusEl.textContent = 'Reading data and generating insights — 20–30 seconds…';
+  statusEl.style.color = 'var(--ink3)';
+  const today = new Date().toLocaleDateString('en-US', {month:'long', day:'numeric', year:'numeric'});
+  const context = document.getElementById('scan-context').value.trim();
+  const MAX_CHARS = 18000;
+  let dataPayload = '';
+  const sourceNames = [];
+  if (pbj_uploadedFiles.br) { sourceNames.push(pbj_uploadedFiles.br.name); dataPayload += '\n\n=== BUSINESS REPORT ===\n' + pbj_uploadedFiles.br.text.slice(0, Math.floor(MAX_CHARS * 0.4)); }
+  if (pbj_uploadedFiles.kw) { sourceNames.push(pbj_uploadedFiles.kw.name); dataPayload += '\n\n=== KEYWORD TRACKER ===\n' + pbj_uploadedFiles.kw.text.slice(0, Math.floor(MAX_CHARS * 0.35)); }
+  if (pbj_uploadedFiles.ads) { sourceNames.push(pbj_uploadedFiles.ads.name); dataPayload += '\n\n=== ADS SEARCH TERMS ===\n' + pbj_uploadedFiles.ads.text.slice(0, Math.floor(MAX_CHARS * 0.25)); }
+  const priorEntries = document.querySelectorAll('#log-entries .log-entry');
+  let priorContext = '';
+  if (priorEntries.length > 0) {
+    const latest = priorEntries[0];
+    priorContext = '\nMost recent entry: "' + (latest.querySelector('.log-title')?.innerText || '') + '" (' + (latest.querySelector('.log-date')?.innerText || '') + ').';
+  }
+  const systemPrompt = BRAND_CTX_PBJ + '\n\nPRIOR CONTEXT:' + priorContext + '\n\nWrite a weekly insights log entry for the PB & Jay dashboard. Collaborative, data-forward tone. Use "opportunity" not "problem."\n\nFormat EXACTLY:\nTITLE: [title]\nMETRICS:\nLine | Metric | Value | Change\nFINDINGS:\n[emoji] [finding with specific data]\n[5-8 findings. ✅ positive · 📈 improving · ⚠ watch · 🔴 urgent]\nACTION:\n[1-3 specific next steps]';
+  const userMsg = 'Today: ' + today + (context ? '\nContext: ' + context : '') + '\n\nAnalyze:\n' + dataPayload;
+  try {
+    const raw = await callClaude(userMsg, systemPrompt, 2000);
+    populatePreview(raw, today, sourceNames);
+    document.getElementById('preview-panel').style.display = 'block';
+    document.getElementById('preview-panel').scrollIntoView({behavior:'smooth', block:'start'});
+    statusEl.textContent = '✓ Draft ready — review below.';
+    statusEl.style.color = 'var(--navy)';
+    document.getElementById('upload-form').style.display = 'none';
+    document.getElementById('upload-toggle-btn').textContent = '+ Upload & Scan';
+  } catch(err) {
+    statusEl.textContent = '⚠ ' + err.message;
+    statusEl.style.color = 'var(--rose)';
+  } finally {
+    btn.disabled = false;
+    document.getElementById('scan-btn-text').textContent = '✦ Generate Insights Entry';
+  }
+}
+
+function populatePreview(raw, today, sourceNames) {
+  const titleMatch = raw.match(/TITLE:\s*(.+)/i);
+  document.getElementById('preview-title').value = titleMatch ? titleMatch[1].trim() : 'Weekly Insights — ' + today;
+  document.getElementById('preview-date').value = today;
+  document.getElementById('preview-sources').value = sourceNames.join(', ');
+  const metricsMatch = raw.match(/METRICS:\s*([\s\S]*?)(?=\nFINDINGS:|$)/i);
+  if (metricsMatch) { document.getElementById('preview-metrics').value = metricsMatch[1].trim().split('\n').map(l => l.trim()).filter(l => l.includes('|')).join('\n'); }
+  const findingsMatch = raw.match(/FINDINGS:\s*([\s\S]*?)(?=\nACTION:|$)/i);
+  if (findingsMatch) { document.getElementById('preview-findings').value = findingsMatch[1].trim().split('\n').map(l => l.trim()).filter(l => l.length > 2).join('\n'); }
+  const actionMatch = raw.match(/ACTION:\s*([\s\S]*?)$/i);
+  if (actionMatch) document.getElementById('preview-action').value = actionMatch[1].trim();
+}
+
+function publishEntry() {
+  const title = document.getElementById('preview-title').value.trim();
+  const date  = document.getElementById('preview-date').value.trim();
+  const sources = document.getElementById('preview-sources').value.trim();
+  const metrics = document.getElementById('preview-metrics').value.trim();
+  const findings = document.getElementById('preview-findings').value.trim();
+  const action = document.getElementById('preview-action').value.trim();
+  const statusEl = document.getElementById('publish-status');
+  if (!title) { statusEl.textContent = '⚠ Title required.'; statusEl.style.color = 'var(--rose)'; return; }
+  let metricsHtml = '';
+  if (metrics) {
+    const rows = metrics.split('\n').filter(Boolean).map(line => {
+      const p = line.split('|').map(s => s.trim());
+      const lbl = p[0]||'', val = p[1]||'', chg = p[2]||'';
+      const cls = chg.startsWith('+') || chg.startsWith('↑') ? 'lm-up' : chg.startsWith('-') || chg.startsWith('↓') ? 'lm-down' : 'lm-flat';
+      return '<div class="log-metric"><div class="lm-lbl">' + lbl + '</div><div class="lm-val">' + val + '</div>' + (chg ? '<div class="lm-change ' + cls + '">' + chg + '</div>' : '') + '</div>';
+    }).join('');
+    metricsHtml = '<div class="log-metric-row">' + rows + '</div>';
+  }
+  let findingsHtml = '';
+  if (findings) {
+    const rows = findings.split('\n').filter(Boolean).map(line => {
+      const icon = line.match(/^(📈|✅|⚠|🔴|📋|💡)/)?.[0] || '📋';
+      const text = line.replace(/^(📈|✅|⚠|🔴|📋|💡)\s*/, '');
+      return '<div class="log-finding"><span class="fi">' + icon + '</span><span>' + text + '</span></div>';
+    }).join('');
+    findingsHtml = '<div class="log-findings">' + rows + '</div>';
+  }
+  const sourcesHtml = sources ? '<div class="log-sources" style="margin-top:6px;">' + sources.split(',').map(s => '<span class="log-source">' + s.trim() + '</span>').join('') + '</div>' : '';
+  const actionHtml = action ? '<div class="log-action do"><strong>↑ Actions / Watch:</strong> ' + action + '</div>' : '';
+  const cls = findings.includes('🔴') ? 'watch' : findings.includes('⚠') ? 'mixed' : 'positive';
+  const entryHtml = '<div class="log-entry ' + cls + '"><div class="log-header"><div><div class="log-title">' + title + '</div>' + sourcesHtml + '</div><span class="log-date">' + date + '</span></div>' + metricsHtml + findingsHtml + actionHtml + '</div>';
+  document.getElementById('log-entries').insertAdjacentHTML('afterbegin', entryHtml);
+  discardPreview();
+  ['br','kw','ads'].forEach(k => {
+    pbj_uploadedFiles[k] = null;
+    const z = document.getElementById('zone-' + k); const f = document.getElementById('fname-' + k); const i = document.getElementById('file-' + k);
+    if (z) z.classList.remove('loaded'); if (f) f.textContent = ''; if (i) i.value = '';
+  });
+  document.getElementById('scan-context').value = '';
+  document.getElementById('scan-status').textContent = '';
+  statusEl.textContent = '✓ Published';
+}
+
+function discardPreview() {
+  document.getElementById('preview-panel').style.display = 'none';
+  ['preview-title','preview-date','preview-sources','preview-metrics','preview-findings','preview-action'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
+}
+
 </script>
+
+<!-- ══ PPC ══ -->
+<div id="tab-ppc" class="page">
+
+  <div class="alert" style="background:var(--teal-light);border-color:rgba(0,31,96,0.2);color:var(--navy);">
+    <span style="font-size:16px;flex-shrink:0;">📊</span>
+    <span><strong>PPC Strategy — PB &amp; Jay · May 2026.</strong> Makeup Wipes is the only line currently generating reliable PPC conversion (9% avg conv%). Face Masks are suppressed by the 12-pack Buy Box hijack — PPC spend on that ASIN is currently converting to the rogue seller, not PB &amp; Jay. Hydrogel Mask has near-zero organic visibility; PPC is the only traffic lever. This tab covers strategy, keyword targets, and TACOS context for each line.</span>
+  </div>
+
+  <!-- Buy Box Hijack Warning -->
+  <div class="alert warn">
+    <span style="font-size:16px;flex-shrink:0;">⚠️</span>
+    <span><strong>Face Mask PPC: Hold broad spend until Buy Box is reclaimed on 12-pack (PBJ0025).</strong> The rogue seller has ~200 units remaining. Any PPC driving traffic to the 12-pack ASIN currently converts to her revenue, not PB &amp; Jay's. Exception: PPC on individual single-variant ASINs (Vitamin C, Rose, Green Tea — converting 10–12%) is still effective. Resume full 12-pack PPC the moment Buy Box flips.</span>
+  </div>
+
+  <!-- May Performance Summary -->
+  <div class="sec">
+    <div class="sec-title">May 2026 — Blended PPC Context <span class="badge bg-amber">3 lines</span></div>
+    <div style="overflow-x:auto;">
+    <table class="data">
+      <thead><tr><th>Product Line</th><th>Sessions</th><th>Units</th><th>Conv%</th><th>Revenue</th><th>Buy Box</th><th>PPC Priority</th></tr></thead>
+      <tbody>
+        <tr class="our"><td><strong>Makeup Wipes (Cleancare)</strong></td><td>632</td><td>57</td><td><span class="pill pill-g">9.0%</span></td><td>$399</td><td>~97%</td><td>✅ Active — scale carefully</td></tr>
+        <tr><td>Face Masks — singles (Purenature)</td><td>~400 est.</td><td>19</td><td><span class="pill pill-g">10–12%*</span></td><td>$114</td><td>100%</td><td>⚠ Limited — target converting variants only</td></tr>
+        <tr><td>Face Masks — 12-pack (PBJ0025)</td><td>~1,695 est.</td><td>~0 attributed</td><td><span class="pill pill-r">~0% effective</span></td><td>$0 attributed</td><td>0% (hijacked)</td><td>🚫 Pause — reclaim first</td></tr>
+        <tr><td>Hydrogel Face Mask</td><td>27</td><td>0</td><td><span class="pill pill-r">0%</span></td><td>$0</td><td>100%</td><td>🎯 Immediate — only traffic lever available</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div style="margin-top:12px;padding:12px 16px;background:var(--bg);border-radius:8px;font-size:13px;color:var(--ink2);line-height:1.7;">
+      *Face mask single-variant conversion: Vitamin C 11.1%, Rose 10.7%, Green Tea 12.0% — these three are confirmed converters. The blended 0.9% is distorted by the 12-pack Buy Box hijack absorbing the majority of mask sessions without attributing sales.
+    </div>
+  </div>
+
+  <!-- Makeup Wipes PPC -->
+  <div class="sec">
+    <div class="sec-title">Makeup Wipes — PPC Strategy <span class="badge bg-green">Active · BSR #125</span></div>
+    <p style="font-size:13px;color:var(--ink2);line-height:1.75;margin-bottom:16px;">Wipes convert at 9% average with zero organic rankings across 54 tracked keywords. PPC is currently the only source of non-brand traffic. The opportunity is to use PPC conversion velocity to push key terms toward organic rankings — the same mechanism that brought MiGuard's "migraine supplement" from #28 toward page 1. Every exact-match PPC conversion on "makeup remover wipes" or "individual makeup remover wipes" tells Amazon this listing belongs in organic results for that query.</p>
+    <div class="two">
+      <div>
+        <div style="font-weight:600;color:var(--navy);margin-bottom:10px;font-size:13px;">Priority Exact-Match Targets</div>
+        <table class="data" style="font-size:12.5px;">
+          <thead><tr><th>Keyword</th><th>Vol/mo</th><th>ABA%</th><th>Competing</th><th>Priority</th></tr></thead>
+          <tbody>
+            <tr class="our"><td><strong>individual makeup remover wipes</strong></td><td>2,492</td><td><span class="pill pill-g">68.9%</span></td><td>748</td><td>🎯 Primary</td></tr>
+            <tr class="our"><td><strong>makeup remover wipes individually wrapped</strong></td><td>2,144</td><td><span class="pill pill-g">58.1%</span></td><td>607</td><td>🎯 Primary</td></tr>
+            <tr><td>makeup remover wipes</td><td>218,338</td><td>44.1%</td><td>&gt;5,000</td><td>Secondary</td></tr>
+            <tr><td>sensitive skin makeup remover wipes</td><td>965</td><td>38.9%</td><td>395</td><td>Secondary</td></tr>
+            <tr><td>toallitas desmaquillantes para la cara</td><td>1,848</td><td>43.0%</td><td>598</td><td>🇪🇸 Spanish</td></tr>
+            <tr><td>rice water face wipes</td><td>600</td><td><span class="pill pill-g">95.0%</span></td><td>193</td><td>🎯 Winnable</td></tr>
+            <tr><td>korean makeup remover</td><td>1,745</td><td>15.9%</td><td>&gt;1,000</td><td>Brand angle</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div style="font-weight:600;color:var(--navy);margin-bottom:10px;font-size:13px;">Variant-Specific Campaign Structure</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.85;">
+          <strong>Top 3 converting variants</strong> (Charcoal 13.45%, Pomegranate 20%, Collagen 12.1%) should carry the majority of PPC budget. These have established conversion history — PPC reinforces it.<br><br>
+          <strong>Vitamin C (23% BB) and Rose Water (26% BB)</strong> are Buy Box suppressed — pause PPC on these until the Buy Box issue is resolved. Spend is going to competitors.<br><br>
+          <strong>Spanish-language exact match</strong> ("toallitas desmaquillantes para la cara") has only 598 competing products and 43% ABA — high-intent, low-competition, low expected CPC. Worth a small dedicated budget ($3–5/day).
+        </div>
+        <div style="margin-top:12px;padding:12px 16px;background:var(--teal-light);border-radius:8px;font-size:13px;color:var(--navy);line-height:1.7;">
+          <strong>Buy Box priority:</strong> Before scaling PPC on Vitamin C or Rose Water wipes, investigate and fix the Buy Box suppression. At 23–26% Buy Box, PPC spend on those variants is partially benefiting the competing seller.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hydrogel PPC -->
+  <div class="sec">
+    <div class="sec-title">Hydrogel Face Mask — PPC Strategy <span class="badge bg-red">0 units May · Immediate action</span></div>
+    <p style="font-size:13px;color:var(--ink2);line-height:1.75;margin-bottom:16px;">27 sessions and 0 units in May means zero organic signal being generated. Amazon's algorithm needs conversion history on specific keywords to assign organic rank — without any PPC, the Hydrogel has no mechanism to build that signal. At $20/5-pack ($4/mask), the product is well-priced versus BIODANCE ($4.75/mask) and COSRX ($5/mask). PPC is not a risk here — it's the only lever. Even $10–15/day on 3–4 exact-match targets would generate enough signal to begin building organic rank history.</p>
+    <div class="two">
+      <div>
+        <div style="font-weight:600;color:var(--navy);margin-bottom:10px;font-size:13px;">Immediate PPC Targets — Hydrogel</div>
+        <table class="data" style="font-size:12.5px;">
+          <thead><tr><th>Keyword</th><th>Vol/mo</th><th>ABA%</th><th>Competing</th><th>Current Rank</th></tr></thead>
+          <tbody>
+            <tr class="our"><td><strong>quia face mask</strong></td><td>5,876</td><td><span class="pill pill-g">76.0%</span></td><td>129</td><td>&gt;306</td></tr>
+            <tr class="our"><td><strong>glass skin face mask</strong></td><td>1,848</td><td>41.5%</td><td>&gt;2,000</td><td><span class="pill pill-g">#199</span> — build on it</td></tr>
+            <tr><td>hydrogel face mask</td><td>1,232</td><td>14.8%</td><td>&gt;1,000</td><td>&gt;306</td></tr>
+            <tr><td>overnight face mask</td><td>8,724</td><td>34.3%</td><td>&gt;3,000</td><td>&gt;306</td></tr>
+            <tr><td>mascarilla de colageno</td><td>2,484</td><td><span class="pill pill-g">68.2%</span></td><td>602</td><td><span class="pill pill-a">#284</span></td></tr>
+            <tr><td>collagen face mask</td><td>52,349</td><td>50.1%</td><td>&gt;4,000</td><td>&gt;306</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div style="font-weight:600;color:var(--navy);margin-bottom:10px;font-size:13px;">Why PPC Drives Organic Here</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.85;">
+          The Hydrogel has <strong>3 organic rankings</strong> — "glass skin face mask" (#199), "mascarilla de colageno" (#284), "korean collagen hydrogel mask" (#235). These are fragile — they exist from initial indexing, not conversion history. PPC on these exact terms builds the conversion signal Amazon needs to push them from page 3–4 toward page 1.<br><br>
+          <strong>"Quia face mask"</strong> (5,876 SV, 76% ABA, only 129 competing) is the highest-priority target — 76% of searches result in a purchase and there are only 129 products competing. At this competition level, even 2–3 exact-match PPC conversions/week could move it from &gt;306 to top 50.
+        </div>
+        <div style="margin-top:12px;padding:12px 16px;background:var(--teal-light);border-radius:8px;font-size:13px;color:var(--navy);line-height:1.7;">
+          <strong>Suggested starting budget:</strong> $10–15/day across 4 exact-match campaigns. Run for 30 days, then review which terms generated conversions and reallocate budget toward those. "Quia face mask" and "mascarilla de colageno" first — lowest competition, highest ABA.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Face Masks PPC (post-reclaim) -->
+  <div class="sec">
+    <div class="sec-title">Face Masks — PPC Strategy <span class="badge bg-amber">Post-Reclaim Plan</span></div>
+    <p style="font-size:13px;color:var(--ink2);line-height:1.75;margin-bottom:16px;">Once the 12-pack Buy Box is reclaimed (est. 2–4 weeks), the face mask line will have full PPC capability again. The 12-pack (PBJ0025) has the most organic traffic history and should anchor the PPC strategy. Individual high-converting variants (Vitamin C, Rose, Green Tea) should be targeted with variant-specific keywords simultaneously. Current listing optimizations are already in place — the listing is ready to convert the moment Buy Box flips.</p>
+    <div class="two">
+      <div>
+        <div style="font-weight:600;color:var(--navy);margin-bottom:10px;font-size:13px;">12-Pack Priority Keywords (post-reclaim)</div>
+        <table class="data" style="font-size:12.5px;">
+          <thead><tr><th>Keyword</th><th>Vol/mo</th><th>ABA%</th><th>Competing</th></tr></thead>
+          <tbody>
+            <tr class="our"><td><strong>mascarilla de colageno</strong></td><td>2,484</td><td><span class="pill pill-g">68.2%</span></td><td>602</td></tr>
+            <tr class="our"><td><strong>fave masks for women</strong></td><td>1,740</td><td>25.6%</td><td>427</td></tr>
+            <tr><td>face mask set</td><td>1,851</td><td>29.2%</td><td>&gt;9,000</td></tr>
+            <tr><td>collagen face mask</td><td>52,349</td><td>50.1%</td><td>&gt;4,000</td></tr>
+            <tr><td>korean face mask</td><td>31,976</td><td>25.4%</td><td>&gt;4,000</td></tr>
+            <tr><td>mascarillas coreanas para la cara</td><td>1,848</td><td>38.1%</td><td>&gt;1,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div style="font-weight:600;color:var(--navy);margin-bottom:10px;font-size:13px;">Variant-Specific Targets (single ASINs)</div>
+        <table class="data" style="font-size:12.5px;">
+          <thead><tr><th>Variant</th><th>Conv%</th><th>Primary Keyword Target</th></tr></thead>
+          <tbody>
+            <tr class="our"><td><strong>Vitamin C</strong></td><td>11.1%</td><td>vitamin c face mask (1,229/mo, 35.5% ABA)</td></tr>
+            <tr class="our"><td><strong>Rose Water</strong></td><td>10.7%</td><td>rose water face mask — low competition</td></tr>
+            <tr class="our"><td><strong>Green Tea</strong></td><td>12.0%</td><td>tea tree face mask / green tea face mask</td></tr>
+            <tr><td>Collagen</td><td>6.98%</td><td>collagen face mask (52K vol, 50% ABA)</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:12px;padding:12px 16px;background:var(--sand);border-radius:8px;font-size:13px;color:var(--navy);line-height:1.7;">
+          <strong>TACOS connection:</strong> As PPC conversions build organic rank on "collagen face mask" (52K vol, 50% ABA) and "korean face mask" (32K vol), organic sessions increase — raising total sales without proportionally raising ad spend. This is what brings TACOS toward the 10–15% range over 30–60 days of consistent PPC.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Opportunities -->
+  <div class="sec">
+    <div class="sec-title">Data-Informed PPC Opportunities <span class="badge bg-amber">For discussion</span></div>
+    <div class="opp ol" style="margin-bottom:10px;">
+      <div class="opp-hdr"><span class="pri" style="color:var(--navy);">Opportunity</span><span class="otag">Hydrogel — Immediate PPC launch</span></div>
+      <div class="obody">The Hydrogel Mask has 0 PPC history and 0 conversion signal. At $20/5-pack with strong reviews (4.6★) and a pricing advantage vs. BIODANCE and COSRX, the product is ready to convert. Start with "quia face mask" (76% ABA, 129 competing) and "mascarilla de colageno" (68.2% ABA, 602 competing) on exact match at $5/day each. These low-competition, high-intent terms give the best chance of first conversions at manageable spend.</div>
+    </div>
+    <div class="opp ol" style="margin-bottom:10px;">
+      <div class="opp-hdr"><span class="pri" style="color:var(--navy);">Opportunity</span><span class="otag">Wipes — Spanish-language exact match test</span></div>
+      <div class="obody">"Toallitas desmaquillantes para la cara" (1,848 vol, 43% ABA, 598 competing) is an underserved audience. Spanish-language terms across all three product lines show disproportionately high ABA with very low competition — likely because most sellers haven't optimized for this audience. A small exact-match campaign ($3–5/day) on this term plus "individual makeup remover wipes" (68.9% ABA, 748 competing) could be the most efficient PPC spend in the portfolio right now.</div>
+    </div>
+    <div class="opp ol" style="margin-bottom:10px;">
+      <div class="opp-hdr"><span class="pri" style="color:var(--navy);">Opportunity</span><span class="otag">Wipes — Pause Buy Box suppressed variants</span></div>
+      <div class="obody">Vitamin C (PBJ0008, 23% Buy Box) and Rose Water (PBJ0012, 26% Buy Box) are actively losing PPC conversions to whoever holds the Box. Any PPC spend on these variants is partially funding a competitor. Pause PPC on these two specifically until Buy Box is fully reclaimed, then re-activate with their variant-specific keywords (lemon/vitamin C wipes, rose water wipes).</div>
+    </div>
+    <div class="opp ol" style="margin-bottom:10px;">
+      <div class="opp-hdr"><span class="pri" style="color:var(--navy);">Opportunity</span><span class="otag">Face Masks — Pre-reclaim listing optimization now</span></div>
+      <div class="obody">The 12-pack listing is being optimized now (before Buy Box reclaim) so the moment PPC launches post-reclaim, the listing is already primed to convert at the 10–12% rate confirmed by the individual variants. Key backend additions to make before reclaim: "mascarillas para la cara," "fave masks for women," "mascarilla de colageno" — all high-ABA, low-competition terms that should be indexed before PPC starts driving traffic to them.</div>
+    </div>
+    <div class="opp ol">
+      <div class="opp-hdr"><span class="pri" style="color:var(--navy);">Opportunity</span><span class="otag">All lines — ASIN targeting review</span></div>
+      <div class="obody">ASIN product targeting typically converts best when the targeted product is a close substitute — similar price, similar format, similar use case. For makeup wipes, targeting Neutrogena or Burt's Bees wipes ASINs could capture buyers comparing options. For face masks, targeting DERMAL or Celavi variety pack ASINs may capture the variety-seeking buyer segment. Start with 5–10 close-substitute ASINs per line at low bid ($0.25–0.40) before scaling.</div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- ══ INSIGHTS LOG ══ -->
+<div id="tab-insights" class="page">
+
+  <div class="alert" style="background:var(--teal-light);border-color:rgba(0,31,96,0.2);color:var(--navy);">
+    <span style="font-size:16px;flex-shrink:0;">📋</span>
+    <span><strong>Running insights log — PB &amp; Jay.</strong> Each entry records what data was reviewed, what the numbers showed, and what to watch or action next. Newest entries at the top. Upload fresh reports weekly to generate a new AI-drafted entry for review before publishing.</span>
+  </div>
+
+  <!-- Upload + AI Scan Panel -->
+  <div class="log-upload-panel" id="log-upload-panel">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px;">
+      <div>
+        <div style="font-family:var(--font-serif);font-size:18px;color:var(--navy);margin-bottom:4px;">Weekly Insights Scan</div>
+        <div style="font-size:12.5px;color:var(--ink3);">Upload this week's reports — AI will analyze and generate a draft entry for you to review and edit before publishing.</div>
+      </div>
+      <button class="btn2" onclick="toggleUploadPanel()" id="upload-toggle-btn">+ Upload &amp; Scan</button>
+    </div>
+
+    <div id="upload-form" style="display:none;">
+      <div class="upload-grid">
+        <div class="upload-zone" id="zone-br" onclick="triggerUpload('file-br')">
+          <div class="uz-icon">📊</div>
+          <div class="uz-label">Business Report</div>
+          <div class="uz-sub">Sessions · Units · Conv% · Revenue per SKU</div>
+          <div class="uz-formats">CSV or XLSX</div>
+          <div class="uz-filename" id="fname-br"></div>
+          <input type="file" id="file-br" accept=".csv,.xlsx,.xls" style="display:none;" onchange="handleFileSelect('br', this)" />
+        </div>
+        <div class="upload-zone" id="zone-kw" onclick="triggerUpload('file-kw')">
+          <div class="uz-icon">🔑</div>
+          <div class="uz-label">Keyword Tracker</div>
+          <div class="uz-sub">Organic ranks · Search volume · ABA% · Select multiple if needed</div>
+          <div class="uz-formats">CSV or XLSX · Multi-select OK</div>
+          <div class="uz-filename" id="fname-kw"></div>
+          <input type="file" id="file-kw" accept=".csv,.xlsx,.xls" style="display:none;" multiple onchange="handleKwFiles(this)" />
+        </div>
+        <div class="upload-zone" id="zone-ads" onclick="triggerUpload('file-ads')">
+          <div class="uz-icon">📣</div>
+          <div class="uz-label">Ads Search Terms Report</div>
+          <div class="uz-sub">Spend · Sales · ACoS · Orders · Keywords</div>
+          <div class="uz-formats">CSV or XLSX</div>
+          <div class="uz-filename" id="fname-ads"></div>
+          <input type="file" id="file-ads" accept=".csv,.xlsx,.xls" style="display:none;" onchange="handleFileSelect('ads', this)" />
+        </div>
+      </div>
+
+      <div style="margin-top:16px;">
+        <div class="ulbl" style="margin-bottom:6px;">Context / Notes for this scan (optional)</div>
+        <textarea id="scan-context" rows="2" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:var(--font-sans);font-size:13px;color:var(--ink);resize:vertical;" placeholder="e.g. Buy Box on PBJ0025 reclaimed this week. Starting Hydrogel PPC. Watching wipes conversion after listing updates."></textarea>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px;margin-top:16px;flex-wrap:wrap;">
+        <button class="btn" id="scan-btn" onclick="runInsightsScan()">
+          <span id="scan-btn-text">✦ Generate Insights Entry</span>
+        </button>
+        <button class="btn2" onclick="toggleUploadPanel()">Cancel</button>
+        <span id="scan-status" class="smsg" style="margin-top:0;"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preview Panel — shown after AI generates draft -->
+  <div id="preview-panel" style="display:none;margin-bottom:24px;">
+    <div class="sec" style="border:2px solid var(--green);">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+        <div>
+          <div style="font-family:var(--font-serif);font-size:18px;color:var(--navy);margin-bottom:3px;">Review Draft Entry</div>
+          <div style="font-size:12.5px;color:var(--ink3);">Edit any field below before publishing to the log.</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="btn" onclick="publishEntry()">✓ Publish to Log</button>
+          <button class="btn2" onclick="discardPreview()">Discard</button>
+        </div>
+      </div>
+      <div class="ug" style="margin-bottom:16px;">
+        <div>
+          <div class="ulbl">Entry Title</div>
+          <input type="text" id="preview-title" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:var(--font-sans);font-size:13px;color:var(--ink);min-height:auto;" />
+        </div>
+        <div>
+          <div class="ulbl">Date</div>
+          <input type="text" id="preview-date" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:var(--font-sans);font-size:13px;color:var(--ink);min-height:auto;" />
+        </div>
+      </div>
+      <div style="margin-bottom:16px;">
+        <div class="ulbl" style="margin-bottom:6px;">Key Metrics (one per line: Label | Value | Change)</div>
+        <textarea id="preview-metrics" rows="5" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:var(--font-mono);font-size:12px;color:var(--ink);resize:vertical;"></textarea>
+      </div>
+      <div style="margin-bottom:16px;">
+        <div class="ulbl" style="margin-bottom:6px;">Findings (prefix each line with ✅ 📈 ⚠ or 🔴)</div>
+        <textarea id="preview-findings" rows="8" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:var(--font-mono);font-size:12px;color:var(--ink);resize:vertical;"></textarea>
+      </div>
+      <div style="margin-bottom:16px;">
+        <div class="ulbl" style="margin-bottom:6px;">Action / Watch</div>
+        <textarea id="preview-action" rows="3" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:var(--font-sans);font-size:13px;color:var(--ink);resize:vertical;"></textarea>
+      </div>
+      <div style="margin-bottom:8px;">
+        <div class="ulbl" style="margin-bottom:6px;">Data Sources</div>
+        <input type="text" id="preview-sources" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:var(--font-mono);font-size:12px;color:var(--ink);" />
+      </div>
+      <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;">
+        <button class="btn" onclick="publishEntry()">✓ Publish to Log</button>
+        <button class="btn2" onclick="discardPreview()">Discard</button>
+        <span id="publish-status" class="smsg" style="margin-top:0;margin-left:4px;"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Log Entries -->
+  <div id="log-entries">
+
+    <!-- Entry 1 — June 5, 2026 -->
+    <div class="log-entry mixed">
+      <div class="log-header">
+        <div>
+          <div class="log-title">Brand Audit Baseline + Buy Box Hijack Identified — May 2026</div>
+          <div class="log-sources" style="margin-top:6px;">
+            <span class="log-source">May Business Report</span>
+            <span class="log-source">Face Masks Cerebro (6,002 kws)</span>
+            <span class="log-source">Makeup Wipes Cerebro (6,324 kws)</span>
+            <span class="log-source">Hydrogel Cerebro (5,290 kws)</span>
+            <span class="log-source">SKU Performance Tracker</span>
+            <span class="log-source">Face Masks Competitor Report</span>
+            <span class="log-source">Wipes Competitor Report</span>
+          </div>
+        </div>
+        <span class="log-date">June 5, 2026</span>
+      </div>
+
+      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.09em;color:var(--ink3);margin-bottom:10px;margin-top:4px;">Business Report — May 2026</div>
+      <div class="log-metric-row">
+        <div class="log-metric"><div class="lm-lbl">Wipes Sessions</div><div class="lm-val">632</div><div class="lm-change lm-flat">Revenue driver line</div></div>
+        <div class="log-metric"><div class="lm-lbl">Wipes Units</div><div class="lm-val">57</div><div class="lm-change lm-up">↑ $399 revenue</div></div>
+        <div class="log-metric"><div class="lm-lbl">Wipes Conv%</div><div class="lm-val">9.0%</div><div class="lm-change lm-flat">Above 7% floor</div></div>
+        <div class="log-metric"><div class="lm-lbl">Mask Sessions</div><div class="lm-val">2,095</div><div class="lm-change lm-down">↓ 0.9% conv — hijacked</div></div>
+        <div class="log-metric"><div class="lm-lbl">Hydrogel Sessions</div><div class="lm-val">27</div><div class="lm-change lm-down">↓ 0 units — no visibility</div></div>
+        <div class="log-metric"><div class="lm-lbl">Total Revenue</div><div class="lm-val">$513</div><div class="lm-change lm-flat">Wipes 78% of total</div></div>
+      </div>
+
+      <div class="log-findings">
+        <div class="log-finding"><span class="fi">🔴</span><span><strong>Face Mask 12-pack (PBJ0025) Buy Box hijacked.</strong> A rogue third-party seller holds the Buy Box with approximately 200 units remaining. She was previously a distributor — supply has been cut. This explains the 0.9% blended face mask conversion rate. Individual variants (Vitamin C 11.1%, Rose 10.7%, Green Tea 12.0%) confirm the listing converts at full Buy Box. Estimated reclaim: 2–4 weeks. Optimize 12-pack listing now before reclaim.</span></div>
+        <div class="log-finding"><span class="fi">🔴</span><span><strong>Makeup Wipes: Vitamin C (PBJ0008) at 23% Buy Box, Rose Water (PBJ0012) at 26% Buy Box.</strong> These two variants are actively losing sales to a third-party seller. Combined they had 131 sessions in May with only 2 units attributed to PB &amp; Jay — likely 10+ sales going to the competing seller. Investigate pricing suppression or third-party activity on these two ASINs.</span></div>
+        <div class="log-finding"><span class="fi">⚠</span><span><strong>Zero organic rankings across all 57 face mask keywords and all 54 wipes keywords.</strong> Both lines are entirely PPC-dependent for non-brand traffic. All 57 face mask keywords rank &gt;306 (page 4+). All 54 wipes keywords rank &gt;306. The only organic rankings in the portfolio are 3 Hydrogel keywords — "glass skin face mask" (#199), "mascarilla de colageno" (#284), "korean collagen hydrogel mask" (#235).</span></div>
+        <div class="log-finding"><span class="fi">📈</span><span><strong>Makeup Wipes conversion rate at 9.0% is solid — above the 7% category floor.</strong> Charcoal variant is the top seller (16 units, 13.45% conv%), Pomegranate at 20% conversion, Collagen at 12.1%. These three variants are conversion-proven and should anchor PPC strategy. Zero organic rankings means all 57 units came from PPC or brand searches — there is significant organic upside once ranking velocity builds.</span></div>
+        <div class="log-finding"><span class="fi">📈</span><span><strong>Spanish-language terms have disproportionately high ABA with low competition across all three lines.</strong> "Mascarilla de colageno" — 68.2% ABA, 602 competing. "Toallitas desmaquillantes para la cara" — 43.0% ABA, 598 competing. "Quia face mask" — 76% ABA, 129 competing. These represent the fastest path to page-1 rankings — low-competition, high-intent, and currently completely uncontested by PB &amp; Jay.</span></div>
+        <div class="log-finding"><span class="fi">📈</span><span><strong>Hydrogel Face Mask is well-positioned at $4.00/mask vs. BIODANCE ($4.75/mask) and COSRX ($5.00/mask).</strong> 4.6★ / 29 reviews. The product has strong fundamentals — it simply has no traffic. BSR #9,456 reflects zero conversion signal. First PPC campaign (even $10–15/day) will generate more organic signal than the product has seen in its entire history on Amazon.</span></div>
+        <div class="log-finding"><span class="fi">✅</span><span><strong>Full competitor and category leader audit completed across all three lines.</strong> 10 current competitors and 10 category leaders documented for Face Masks, Makeup Wipes, and Hydrogel — including full ingredient, pricing, BSR, review, and threat-level analysis. Dashboard competitor tab populated.</span></div>
+        <div class="log-finding"><span class="fi">✅</span><span><strong>Full per-variant listing audit completed for all 24 SKUs</strong> (12 face masks + 12 makeup wipes + Hydrogel). All titles, B1–B5, product descriptions, and backend keywords rewritten for each variant using actual INCI ingredient data. Dashboard Listing Audit tab populated with before/after for every variant.</span></div>
+      </div>
+
+      <div class="log-action watch">
+        <strong>↳ Watch / Action for June 2026:</strong> (1) Monitor 12-pack Buy Box — check rogue seller inventory weekly; optimize listing now before reclaim. (2) Investigate Buy Box suppression on Wipes Vitamin C and Rose Water — likely a pricing or 3P seller issue. (3) Launch Hydrogel PPC immediately: "quia face mask" and "mascarilla de colageno" exact match, $5/day each. (4) Pull keyword tracker in 30 days to check if any ranking movement has occurred on top ABA terms.
+      </div>
+    </div>
+
+  </div><!-- /log-entries -->
+</div>
+
+
 </body>
 </html>
