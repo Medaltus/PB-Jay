@@ -310,7 +310,7 @@ table.data tr:hover td{background:var(--bg);}
       </table>
       <div class="chips" style="margin-top:10px;">
         <span class="chip chip-r">0.9% conv — critical gap</span>
-        <span class="chip chip-a">High sessions, low conversions</span>
+        <span class="chip chip-a">Sessions shared across variation family</span>
       </div>
     </div>
     <div class="family-card">
@@ -357,7 +357,7 @@ table.data tr:hover td{background:var(--bg);}
         <span class="chip chip-g">Paraben/sulfate/alcohol-free (wipes)</span>
         <span class="chip chip-g">Cruelty-free</span>
         <span class="chip chip-a">Low review count (wipes: 27)</span>
-        <span class="chip chip-r">Face mask conv% 0.9% — critical</span>
+        <span class="chip chip-a">Face mask conv% 0.9% — alt. seller @ $9.99 holds BB</span>
       </div>
     </div>
     <div class="sec">
@@ -1483,12 +1483,12 @@ table.data tr:hover td{background:var(--bg);}
     <div style="width:1px;height:18px;background:rgba(255,255,255,0.2);"></div>
     <div style="font-size:13px;font-weight:600;">Variety 12-Pack · 1 of Each Scent · $14.00</div>
     <div style="width:1px;height:18px;background:rgba(255,255,255,0.2);"></div>
-    <div style="font-family:var(--font-mono);font-size:12px;opacity:0.55;">BSR #793 · 4.6★ · Buy Box reclaim pending</div>
+    <div style="font-family:var(--font-mono);font-size:12px;opacity:0.55;">BSR #793 · 4.6★ · Alt. seller: 177 units @ $9.99 · ~1 mo to sell-through</div>
   </div>
 
   <div class="alert warn">
     <span style="font-size:15px;flex-shrink:0;">⚠️</span>
-    <span><strong>Buy Box Note:</strong> The 12-pack currently has a Buy Box hijack (~200 units remaining with rogue seller). Optimize this listing NOW so it converts at full speed the moment Buy Box flips. Individual variants (Vitamin C, Rose, Green Tea) converting at 10–12% confirm the formula and positioning work.</span>
+    <span><strong>Alternate Seller Note:</strong> The 12-pack variation family has an alternate seller with 177 units remaining at $9.99 vs. PB &amp; Jay's $14.00 MSRP. She sells ~176 units/month — est. ~1 month to sell-through. Listing is already optimized and ready to convert the moment she sells through.</span>
   </div>
 
   <div class="audit-sec">
@@ -2277,7 +2277,8 @@ PRODUCT LINES:
    - Single masks: $6.00 · 1 count · Anchor ASIN B0G547Y4K7 (Avocado)
    - 12-Pack variety: $14.00 · ASIN B0G549VXFH · PBJ0025
    - BSR: #793 Facial Masks · Rating: 4.6★ (139 reviews)
-   - May: Sessions 2,095 · Units 19 · Conv% 0.9% ← CRITICAL ISSUE
+   - May: Sessions 2,095 (shared across variation family) · Units 19 · Conv% 0.9%
+   - NOTE: All 13 SKUs share sessions. Alternate seller has 177 units @ $9.99 vs. $14.00 MSRP, holds Buy Box. ~1 month to sell-through. Conv% reflects her lower price, NOT listing quality.
    - 12 variants: Avocado, Honey, Cucumber, Pomegranate, Green Tea/Tea Tree, Charcoal, Collagen, Vitamin C, Aloe, Retinol, Acai, Rose
    - All share: Ceramide NP + Sodium Hyaluronate base
    - 0 organic rankings — all 57 keywords >306
@@ -2312,7 +2313,7 @@ COMPLIANCE — SAFE: "helps soften," "supports moisture barrier," "supports a ra
 COMPLIANCE — AVOID: "treats," "cures," "anti-aging" without certification, "reduces wrinkles" as absolute`;
 
 const PROD_DETAILS = {
-  masks: { name: 'PB & Jay Face Masks (Purenature)', focus: '0.9% conversion on 2,095 sessions — listing differentiation is the core problem' },
+  masks: { name: 'PB & Jay Face Masks (Purenature)', focus: 'All 13 SKUs in one variation family sharing 2095 sessions. Alternate seller holds Buy Box at $9.99 vs $14.00 MSRP — 177 units remaining, ~1 month to sell-through. Conv% reflects her price, NOT listing quality. No action until sell-through.' },
   wipes: { name: 'PB & Jay Makeup Wipes (Cleancare)', focus: '9% conversion is decent but zero organic rankings — PPC dependency is the constraint' },
   hydrogel: { name: 'PB & Jay Hydrogel Face Mask', focus: '27 sessions, 0 units — visibility is the immediate problem, not product quality' }
 };
@@ -2452,7 +2453,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const BRAND_CTX_PBJ = `You are an expert Amazon brand analyst for PB & Jay (Pureunbi Corp), a K-beauty skincare brand.
 PRODUCT LINES:
 1. Face Masks (Purenature) — 12 scent variants + 1 twelve-pack · $6.00 · BSR #793 Facial Masks · 4.6★ / 139 reviews
-   CRITICAL: 12-pack (PBJ0025) has Buy Box hijack — rogue seller ~200 units remaining. Reclaim est. 2–4 weeks.
+   NOTE: Alternate seller holds Buy Box across variation family (177 units @ $9.99 vs. $14.00 MSRP). ~1 month to sell-through at ~176 units/month velocity. All 13 SKUs share sessions. Listing optimized — no action until sell-through.
    Individual variant conv%: Vitamin C 11.1%, Rose 10.7%, Green Tea 12.0%
 2. Makeup Wipes (Cleancare) — 12 scent variants · $7.00 · BSR #125 Makeup Cleansing Wipes · 4.4★ / 27 reviews
    May: 632 sessions · 57 units · 9.0% conv · $399 revenue
@@ -2625,13 +2626,13 @@ function discardPreview() {
 
   <div class="alert" style="background:var(--teal-light);border-color:rgba(0,31,96,0.2);color:var(--navy);">
     <span style="font-size:16px;flex-shrink:0;">📊</span>
-    <span><strong>PPC Strategy — PB &amp; Jay · May 2026.</strong> Makeup Wipes is the only line currently generating reliable PPC conversion (9% avg conv%). Face Masks are suppressed by the 12-pack Buy Box hijack — PPC spend on that ASIN is currently converting to the rogue seller, not PB &amp; Jay. Hydrogel Mask has near-zero organic visibility; PPC is the only traffic lever. This tab covers strategy, keyword targets, and TACOS context for each line.</span>
+    <span><strong>PPC Strategy — PB &amp; Jay · May 2026.</strong> Makeup Wipes is the only line currently generating reliable PPC conversion (9% avg conv%). Face Masks are on hold — an alternate seller holds the Buy Box at $9.99 vs. our $14.00 MSRP with ~177 units remaining (~1 month to sell-through). PPC on this line is paused until she sells through. Hydrogel Mask has near-zero organic visibility; PPC is the only traffic lever. This tab covers strategy, keyword targets, and TACOS context for each line.</span>
   </div>
 
-  <!-- Buy Box Hijack Warning -->
+  <!-- Alternate Seller Warning -->
   <div class="alert warn">
     <span style="font-size:16px;flex-shrink:0;">⚠️</span>
-    <span><strong>Face Mask PPC: Hold broad spend until Buy Box is reclaimed on 12-pack (PBJ0025).</strong> The rogue seller has ~200 units remaining. Any PPC driving traffic to the 12-pack ASIN currently converts to her revenue, not PB &amp; Jay's. Exception: PPC on individual single-variant ASINs (Vitamin C, Rose, Green Tea — converting 10–12%) is still effective. Resume full 12-pack PPC the moment Buy Box flips.</span>
+    <span><strong>Face Mask PPC: Hold all spend until the alternate seller sells through (~1 month).</strong> She has 177 units at $9.99 vs. our $14.00 — she holds the Buy Box because of price. PPC on the variation family currently funnels traffic to her checkout, not ours. No exceptions — even individual variant ASINs share sessions in the variation family. Resume PPC immediately when she sells through and we hold the Buy Box exclusively.</span>
   </div>
 
   <!-- May Performance Summary -->
@@ -2643,13 +2644,13 @@ function discardPreview() {
       <tbody>
         <tr class="our"><td><strong>Makeup Wipes (Cleancare)</strong></td><td>632</td><td>57</td><td><span class="pill pill-g">9.0%</span></td><td>$399</td><td>~97%</td><td>✅ Active — scale carefully</td></tr>
         <tr><td>Face Masks — singles (Purenature)</td><td>~400 est.</td><td>19</td><td><span class="pill pill-g">10–12%*</span></td><td>$114</td><td>100%</td><td>⚠ Limited — target converting variants only</td></tr>
-        <tr><td>Face Masks — 12-pack (PBJ0025)</td><td>~1,695 est.</td><td>~0 attributed</td><td><span class="pill pill-r">~0% effective</span></td><td>$0 attributed</td><td>0% (hijacked)</td><td>🚫 Pause — reclaim first</td></tr>
+        <tr><td>Face Masks — 12-pack (PBJ0025)</td><td>~1,695 est.</td><td>~0 attributed</td><td><span class="pill pill-a">~0% (alt. seller holds BB)</span></td><td>$0 attributed</td><td>0% (alt. seller @ $9.99)</td><td>🚫 Pause — ~1 month to sell-through</td></tr>
         <tr><td>Hydrogel Face Mask</td><td>27</td><td>0</td><td><span class="pill pill-r">0%</span></td><td>$0</td><td>100%</td><td>🎯 Immediate — only traffic lever available</td></tr>
       </tbody>
     </table>
     </div>
     <div style="margin-top:12px;padding:12px 16px;background:var(--bg);border-radius:8px;font-size:13px;color:var(--ink2);line-height:1.7;">
-      *Face mask single-variant conversion: Vitamin C 11.1%, Rose 10.7%, Green Tea 12.0% — these three are confirmed converters. The blended 0.9% is distorted by the 12-pack Buy Box hijack absorbing the majority of mask sessions without attributing sales.
+      *Face mask single-variant conversion: Vitamin C 11.1%, Rose 10.7%, Green Tea 12.0% — these three are confirmed converters. The blended 0.9% reflects the alternate seller holding the Buy Box at $9.99 vs. our $14.00 MSRP — she captures the sale, not a listing quality issue.
     </div>
   </div>
 
@@ -2719,13 +2720,13 @@ function discardPreview() {
     </div>
   </div>
 
-  <!-- Face Masks PPC (post-reclaim) -->
+  <!-- Face Masks PPC (post sell-through) -->
   <div class="sec">
-    <div class="sec-title">Face Masks — PPC Strategy <span class="badge bg-amber">Post-Reclaim Plan</span></div>
-    <p style="font-size:13px;color:var(--ink2);line-height:1.75;margin-bottom:16px;">Once the 12-pack Buy Box is reclaimed (est. 2–4 weeks), the face mask line will have full PPC capability again. The 12-pack (PBJ0025) has the most organic traffic history and should anchor the PPC strategy. Individual high-converting variants (Vitamin C, Rose, Green Tea) should be targeted with variant-specific keywords simultaneously. Current listing optimizations are already in place — the listing is ready to convert the moment Buy Box flips.</p>
+    <div class="sec-title">Face Masks — PPC Strategy <span class="badge bg-amber">Launch on Sell-Through (~1 Month)</span></div>
+    <p style="font-size:13px;color:var(--ink2);line-height:1.75;margin-bottom:16px;">Once the alternate seller's ~177 units sell through (est. ~1 month at ~176 units/month), the face mask line will have the Buy Box exclusively at $14.00. The variation family's 2,095 monthly sessions will then convert at full price. Listing is already optimized. Launch PPC immediately on sell-through — the 12-pack (PBJ0025) anchors the strategy, with individual high-converting variants (Vitamin C, Rose, Green Tea) targeted simultaneously.</p>
     <div class="two">
       <div>
-        <div style="font-weight:600;color:var(--navy);margin-bottom:10px;font-size:13px;">12-Pack Priority Keywords (post-reclaim)</div>
+        <div style="font-weight:600;color:var(--navy);margin-bottom:10px;font-size:13px;">12-Pack Priority Keywords — Launch on Sell-Through</div>
         <table class="data" style="font-size:12.5px;">
           <thead><tr><th>Keyword</th><th>Vol/mo</th><th>ABA%</th><th>Competing</th></tr></thead>
           <tbody>
@@ -2769,11 +2770,11 @@ function discardPreview() {
     </div>
     <div class="opp ol" style="margin-bottom:10px;">
       <div class="opp-hdr"><span class="pri" style="color:var(--navy);">Opportunity</span><span class="otag">Wipes — Pause Buy Box suppressed variants</span></div>
-      <div class="obody">Vitamin C (PBJ0008, 23% Buy Box) and Rose Water (PBJ0012, 26% Buy Box) are actively losing PPC conversions to whoever holds the Box. Any PPC spend on these variants is partially funding a competitor. Pause PPC on these two specifically until Buy Box is fully reclaimed, then re-activate with their variant-specific keywords (lemon/vitamin C wipes, rose water wipes).</div>
+      <div class="obody">Vitamin C (PBJ0008, 23% Buy Box) and Rose Water (PBJ0012, 26% Buy Box) are actively losing PPC conversions to whoever holds the Box. Any PPC spend on these variants is partially funding a competitor. Pause PPC on these two specifically until Buy Box is fully reclaimed on each variant, then re-activate with their variant-specific keywords (lemon/vitamin C wipes, rose water wipes).</div>
     </div>
     <div class="opp ol" style="margin-bottom:10px;">
-      <div class="opp-hdr"><span class="pri" style="color:var(--navy);">Opportunity</span><span class="otag">Face Masks — Pre-reclaim listing optimization now</span></div>
-      <div class="obody">The 12-pack listing is being optimized now (before Buy Box reclaim) so the moment PPC launches post-reclaim, the listing is already primed to convert at the 10–12% rate confirmed by the individual variants. Key backend additions to make before reclaim: "mascarillas para la cara," "fave masks for women," "mascarilla de colageno" — all high-ABA, low-competition terms that should be indexed before PPC starts driving traffic to them.</div>
+      <div class="opp-hdr"><span class="pri" style="color:var(--navy);">Opportunity</span><span class="otag">Face Masks — Listing Optimized · Ready for Launch</span></div>
+      <div class="obody">The 12-pack and all individual variant listings are fully optimized — titles, B1–B5, descriptions, and backend keywords (including "mascarillas coreanas para la cara," "mascarilla de colageno," and "fave masks for women") are all in place. Hold PPC until the alternate seller's ~177 units sell through (~1 month). Then launch immediately on the variation family.</div>
     </div>
     <div class="opp ol">
       <div class="opp-hdr"><span class="pri" style="color:var(--navy);">Opportunity</span><span class="otag">All lines — ASIN targeting review</span></div>
@@ -2833,7 +2834,7 @@ function discardPreview() {
 
       <div style="margin-top:16px;">
         <div class="ulbl" style="margin-bottom:6px;">Context / Notes for this scan (optional)</div>
-        <textarea id="scan-context" rows="2" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:var(--font-sans);font-size:13px;color:var(--ink);resize:vertical;" placeholder="e.g. Buy Box on PBJ0025 reclaimed this week. Starting Hydrogel PPC. Watching wipes conversion after listing updates."></textarea>
+        <textarea id="scan-context" rows="2" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:var(--font-sans);font-size:13px;color:var(--ink);resize:vertical;" placeholder="e.g. Alternate seller sold through on face masks — launching PPC. Hydrogel PPC week 2 update. Wipes BB resolved.ates."></textarea>
       </div>
 
       <div style="display:flex;align-items:center;gap:12px;margin-top:16px;flex-wrap:wrap;">
@@ -2930,11 +2931,11 @@ function discardPreview() {
         <div class="log-finding"><span class="fi">✅</span><span><strong>Full Amazon compliance sweep completed across all 25 SKUs.</strong> Removed: brightening/brightens (→ skin-evening/illuminate), dermatologist-tested (uncertified), bestselling/top seller/top-rated (#1 (prohibited boastful claims), renewal (skincare-specific prohibited term), anti-inflammatory, clinically-supported (unsupported), competitor names in listing copy, conversion rate data in customer-facing copy, timed benefit claims. Free-from claims reframed as consumer preference, not health claims.</span></div>
         <div class="log-finding"><span class="fi">✅</span><span><strong>Product descriptions expanded to 4-paragraph structure across all 25 SKUs.</strong> Structure: (1) benefit-led hook with hero active named, (2) "Powered by Korean Skincare Innovation" with full ingredient story, (3) use case and lifestyle occasions, (4) "Clean Beauty Commitment" with certifications. Average description length ~1,300 chars per SKU.</span></div>
         <div class="log-finding"><span class="fi">📈</span><span><strong>Spanish-language backend keywords added to all three product lines.</strong> "Mascarilla de colageno" (68.2% ABA, 602 competing), "mascarillas coreanas para la cara" (38.1% ABA), and "toallitas desmaquillantes para la cara" (43% ABA, 598 competing) prioritized. These represent the lowest-competition, highest-ABA keyword opportunities across the full catalog.</span></div>
-        <div class="log-finding"><span class="fi">⚠</span><span><strong>Buy Box suppression on Wipes Vitamin C (PBJ0008, 23%) and Rose Water (PBJ0012, 26%) still unresolved.</strong> PPC on these two variants should remain paused until Buy Box is reclaimed. Listings are optimized and ready to convert — waiting on Buy Box fix.</span></div>
+        <div class="log-finding"><span class="fi">⚠</span><span><strong>Buy Box suppression on Wipes Vitamin C (PBJ0008, 23%) and Rose Water (PBJ0012, 26%) still unresolved.</strong> PPC on these two variants should remain paused until Buy Box is reclaimed on each. Listings are optimized and ready.</span></div>
       </div>
 
       <div class="log-action do">
-        <strong>↳ Actions / Watch for June 2026:</strong> (1) Monitor 12-pack (PBJ0025) Buy Box — rogue seller at ~200 units remaining; reclaim imminent. Resume PPC immediately on reclaim. (2) Fix "Natural Collagen Production" claim on live Hydrogel listing (PBJ0026) — remove via Seller Central. (3) Investigate and resolve Buy Box suppression on Wipes Vitamin C and Rose Water. (4) Launch Hydrogel PPC: "quia face mask" and "mascarilla de colageno" exact match, $5/day each. (5) Pull keyword tracker end of June to measure organic rank movement on updated backend keywords.
+        <strong>↳ Actions / Watch for June 2026:</strong> (1) Monitor alternate seller sell-through — 177 units @ ~176/month velocity, ~1 month remaining. Resume PPC on face mask variation family immediately on sell-through. (2) Fix "Natural Collagen Production" claim on live Hydrogel listing (PBJ0026) — remove via Seller Central. (3) Investigate and resolve Buy Box suppression on Wipes Vitamin C and Rose Water. (4) Launch Hydrogel PPC: "quia face mask" and "mascarilla de colageno" exact match, $5/day each. (5) Pull keyword tracker end of June to measure organic rank movement on updated backend keywords.
       </div>
     </div>
 
@@ -2943,7 +2944,7 @@ function discardPreview() {
     <div class="log-entry mixed">
       <div class="log-header">
         <div>
-          <div class="log-title">Brand Audit Baseline + Buy Box Hijack Identified — May 2026</div>
+          <div class="log-title">Brand Audit Baseline + Alternate Seller Context Identified — May 2026</div>
           <div class="log-sources" style="margin-top:6px;">
             <span class="log-source">May Business Report</span>
             <span class="log-source">Face Masks Cerebro (6,002 kws)</span>
@@ -2962,13 +2963,13 @@ function discardPreview() {
         <div class="log-metric"><div class="lm-lbl">Wipes Sessions</div><div class="lm-val">632</div><div class="lm-change lm-flat">Revenue driver line</div></div>
         <div class="log-metric"><div class="lm-lbl">Wipes Units</div><div class="lm-val">57</div><div class="lm-change lm-up">↑ $399 revenue</div></div>
         <div class="log-metric"><div class="lm-lbl">Wipes Conv%</div><div class="lm-val">9.0%</div><div class="lm-change lm-flat">Above 7% floor</div></div>
-        <div class="log-metric"><div class="lm-lbl">Mask Sessions</div><div class="lm-val">2,095</div><div class="lm-change lm-down">↓ 0.9% conv — hijacked</div></div>
+        <div class="log-metric"><div class="lm-lbl">Mask Sessions</div><div class="lm-val">2,095</div><div class="lm-change lm-down">↓ 0.9% conv — alt. seller @ $9.99</div></div>
         <div class="log-metric"><div class="lm-lbl">Hydrogel Sessions</div><div class="lm-val">27</div><div class="lm-change lm-down">↓ 0 units — no visibility</div></div>
         <div class="log-metric"><div class="lm-lbl">Total Revenue</div><div class="lm-val">$513</div><div class="lm-change lm-flat">Wipes 78% of total</div></div>
       </div>
 
       <div class="log-findings">
-        <div class="log-finding"><span class="fi">🔴</span><span><strong>Face Mask 12-pack (PBJ0025) Buy Box hijacked.</strong> A rogue third-party seller holds the Buy Box with approximately 200 units remaining. She was previously a distributor — supply has been cut. This explains the 0.9% blended face mask conversion rate. Individual variants (Vitamin C 11.1%, Rose 10.7%, Green Tea 12.0%) confirm the listing converts at full Buy Box. Estimated reclaim: 2–4 weeks. Optimize 12-pack listing now before reclaim.</span></div>
+        <div class="log-finding"><span class="fi">🔴</span><span><strong>Face mask variation family: alternate seller holds Buy Box at $9.99 vs. $14.00 MSRP.</strong> All 13 face mask SKUs share sessions — the 2,095 May sessions reflect the full variation family, not just one ASIN. The alternate seller has 177 units remaining; at ~176 units/month velocity, she is approximately 1 month from selling through. The 0.9% conversion rate reflects her lower price capturing the Buy Box, not a listing quality issue. Individual variants (Vitamin C 11.1%, Rose 10.7%, Green Tea 12.0%) confirm the listing performs at full price. Listing is optimized and ready to convert.</span></div>
         <div class="log-finding"><span class="fi">🔴</span><span><strong>Makeup Wipes: Vitamin C (PBJ0008) at 23% Buy Box, Rose Water (PBJ0012) at 26% Buy Box.</strong> These two variants are actively losing sales to a third-party seller. Combined they had 131 sessions in May with only 2 units attributed to PB &amp; Jay — likely 10+ sales going to the competing seller. Investigate pricing suppression or third-party activity on these two ASINs.</span></div>
         <div class="log-finding"><span class="fi">⚠</span><span><strong>Zero organic rankings across all 57 face mask keywords and all 54 wipes keywords.</strong> Both lines are entirely PPC-dependent for non-brand traffic. All 57 face mask keywords rank &gt;306 (page 4+). All 54 wipes keywords rank &gt;306. The only organic rankings in the portfolio are 3 Hydrogel keywords — "glass skin face mask" (#199), "mascarilla de colageno" (#284), "korean collagen hydrogel mask" (#235).</span></div>
         <div class="log-finding"><span class="fi">📈</span><span><strong>Makeup Wipes conversion rate at 9.0% is solid — above the 7% category floor.</strong> Charcoal variant is the top seller (16 units, 13.45% conv%), Pomegranate at 20% conversion, Collagen at 12.1%. These three variants are conversion-proven and should anchor PPC strategy. Zero organic rankings means all 57 units came from PPC or brand searches — there is significant organic upside once ranking velocity builds.</span></div>
@@ -2979,7 +2980,7 @@ function discardPreview() {
       </div>
 
       <div class="log-action watch">
-        <strong>↳ Watch / Action for June 2026:</strong> (1) Monitor 12-pack Buy Box — check rogue seller inventory weekly; optimize listing now before reclaim. (2) Investigate Buy Box suppression on Wipes Vitamin C and Rose Water — likely a pricing or 3P seller issue. (3) Launch Hydrogel PPC immediately: "quia face mask" and "mascarilla de colageno" exact match, $5/day each. (4) Pull keyword tracker in 30 days to check if any ranking movement has occurred on top ABA terms.
+        <strong>↳ Watch / Action for June 2026:</strong> (1) Monitor alternate seller inventory weekly — 177 units @ ~176/month means ~1 month to sell-through. Listing is optimized. PPC ready to launch on sell-through. (2) Investigate Buy Box suppression on Wipes Vitamin C and Rose Water — likely a pricing or 3P seller issue. (3) Launch Hydrogel PPC immediately: "quia face mask" and "mascarilla de colageno" exact match, $5/day each. (4) Pull keyword tracker in 30 days to check if any ranking movement has occurred on top ABA terms.
       </div>
     </div>
 
