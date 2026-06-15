@@ -237,6 +237,35 @@ table.data tr:hover td{background:var(--bg);}
 .brewrite-active{padding:12px 16px;border-left:3px solid var(--navy);margin-bottom:14px;font-size:13px;color:var(--navy);background:var(--bg3);border-radius:0 6px 6px 0;line-height:1.65;display:flex;gap:8px;align-items:flex-start;}
 .desc-active{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px;font-size:13px;color:var(--navy);line-height:1.75;}
 
+
+/* ── Walmart Channel ─────────────────────────────────────── */
+:root {--wmt:#0071CE;--wmt-light:#EBF5FF;--wmt-spark:#FFC220;}
+.wmt-section{background:var(--wmt-light);border:1px solid rgba(0,113,206,0.18);border-radius:14px;padding:20px 24px;margin-top:18px;}
+.wmt-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.wmt-logo{font-family:var(--font-sans);font-size:13px;font-weight:700;color:var(--wmt);letter-spacing:0.04em;background:#fff;border:1.5px solid var(--wmt);border-radius:6px;padding:3px 10px;}
+.wmt-title{font-family:var(--font-serif);font-size:16px;color:var(--navy);}
+.wmt-pulse{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:14px;}
+.wmt-card{background:#fff;border-radius:10px;padding:14px;border-left:3px solid var(--wmt);}
+.wmt-card .wc-lbl{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:4px;}
+.wmt-card .wc-val{font-family:var(--font-serif);font-size:22px;color:var(--navy);margin-bottom:2px;}
+.wmt-card .wc-note{font-size:11px;color:var(--ink3);}
+.wmt-card.wmt-up{border-left-color:#24E9A3;}
+.wmt-card.wmt-watch{border-left-color:var(--amber);}
+/* Channel comparison table */
+.chan-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px;}
+.chan-table th{background:var(--navy);color:#fff;padding:8px 12px;text-align:left;font-size:11px;font-weight:600;letter-spacing:0.06em;}
+.chan-table th.wmt-th{background:var(--wmt);}
+.chan-table td{padding:9px 12px;border-bottom:1px solid var(--border);}
+.chan-table tr:last-child td{border-bottom:none;}
+.chan-table tr:nth-child(even){background:var(--bg2);}
+.chan-delta{font-size:11px;font-weight:600;padding:2px 7px;border-radius:10px;}
+.chan-delta.up{background:#e0fbf3;color:#0a6644;}
+.chan-delta.dn{background:#fae8e8;color:#7a1f1f;}
+.chan-delta.eq{background:var(--bg2);color:var(--ink3);}
+/* Walmart keyword rank badge */
+.wmt-rank{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:var(--wmt-light);color:var(--wmt);border:1px solid rgba(0,113,206,0.2);}
+.wmt-badge{background:var(--wmt);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:0.06em;}
+
 </style>
 </head>
 <body>
@@ -273,7 +302,7 @@ table.data tr:hover td{background:var(--bg);}
 
   <div class="alert">
     <span style="font-size:16px;flex-shrink:0;">✨</span>
-    <span><strong>3 product lines · 25 active SKUs · June 2026 (Jun 1–15).</strong> Makeup Wipes are the <strong>revenue driver</strong>: 31 units · $217 · 14.2% conv% from 218 sessions. Face Masks converting at 1.1% (2 units / 184 sessions) — alternate seller still active, monitor weekly. Hydrogel Mask: 672 sessions, 0 units, 0% Buy Box — visibility is there, conversion blocked by BB loss. <strong>PPC ACOS 133%</strong> — Korean keywords not converting; Charcoal and Collagen terms performing.</span>
+    <span><strong>3 product lines · 25 active SKUs · Multi-channel (Amazon + Walmart) · June 2026 (Jun 1–15).</strong> Makeup Wipes are the <strong>revenue driver</strong>: 31 units · $217 · 14.2% conv% from 218 sessions. Face Masks converting at 1.1% (2 units / 184 sessions) — alternate seller still active, monitor weekly. Hydrogel Mask: 672 sessions, 0 units, 0% Buy Box — visibility is there, conversion blocked by BB loss. <strong>PPC ACOS 133%</strong> — Korean keywords not converting; Charcoal and Collagen terms performing. <strong>Walmart:</strong> Wipes $449.90 organic in 3 months ($0 ads) · Masks unblocked May, $27 in Jun 1–15 · Ranking #1 "korean face mask" &amp; #1 "korean makeup wipes" organically.</span>
   </div>
 
   <!-- 3 product family cards -->
@@ -405,6 +434,80 @@ table.data tr:hover td{background:var(--bg);}
         <div class="pulse-item g"><div class="p-lbl">Price</div><div class="p-val">$6.00</div><div class="p-note">1 count single mask</div></div>
       </div>
     </div>
+
+    
+    <!-- ── WALMART SECTION: Face Masks ── -->
+    <div class="wmt-section">
+      <div class="wmt-header">
+        <span class="wmt-logo">walmart</span>
+        <span class="wmt-title">Face Masks — Walmart Performance</span>
+        <span class="wmt-badge">Live Mar 9 · Unblocked early May 2026</span>
+      </div>
+
+      <div class="wmt-pulse">
+        <div class="wmt-card wmt-up">
+          <div class="wc-lbl">Jun 1–15 Revenue</div>
+          <div class="wc-val">$27</div>
+          <div class="wc-note">4 units · 8 orders · first real sales</div>
+        </div>
+        <div class="wmt-card wmt-watch">
+          <div class="wc-lbl">Blocked Period</div>
+          <div class="wc-val">~8 wks</div>
+          <div class="wc-note">Mar 9 – early May · listing violation</div>
+        </div>
+        <div class="wmt-card wmt-up">
+          <div class="wc-lbl">Organic Rank</div>
+          <div class="wc-val">5 Top-10</div>
+          <div class="wc-note">7 keywords in top 50 · variety pack</div>
+        </div>
+        <div class="wmt-card wmt-up">
+          <div class="wc-lbl">Ad Spend</div>
+          <div class="wc-val">$0</div>
+          <div class="wc-note">All organic — significant upside ahead</div>
+        </div>
+      </div>
+
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;">Walmart Timeline</div>
+      <table class="chan-table">
+        <tr>
+          <th>Period</th>
+          <th>AMZ Units</th><th>AMZ Revenue</th>
+          <th class="wmt-th">WMT Units</th><th class="wmt-th">WMT Revenue</th>
+        </tr>
+        <tr><td><strong>Mar 9 – Apr 30</strong></td><td>~126</td><td>~$788</td><td style="color:var(--rose);font-weight:600;">0</td><td style="color:var(--rose);">$0 — blocked (violation)</td></tr>
+        <tr><td><strong>May 2026</strong></td><td>76</td><td>$493</td><td style="color:var(--ink3);">~0</td><td style="color:var(--ink3);">Unblocked late Apr / early May</td></tr>
+        <tr><td><strong>Jun 1–15</strong></td><td>2</td><td>$12</td><td style="color:var(--wmt);font-weight:600;">4</td><td style="color:var(--wmt);font-weight:600;">$27 <span class="chan-delta up">First real sales</span></td></tr>
+      </table>
+
+      <div style="margin-top:14px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;">Walmart Keyword Rankings — Variety Pack (72XZDO2VCG4I)</div>
+        <table class="chan-table">
+          <tr><th>Keyword</th><th class="wmt-th" style="text-align:center;">WMT Rank</th><th>Competing Products</th><th>Signal</th></tr>
+          <tr><td>korean face mask</td><td style="text-align:center;"><span class="wmt-rank">#1</span></td><td>212</td><td style="font-size:11px;color:#0a6644;">🏆 #1 in growing category</td></tr>
+          <tr><td>avocado face mask</td><td style="text-align:center;"><span class="wmt-rank">#4</span></td><td>35</td><td style="font-size:11px;color:#0a6644;">🏆 Very low competition — own it</td></tr>
+          <tr><td>korean collagen sheet mask</td><td style="text-align:center;"><span class="wmt-rank">#10</span></td><td>92</td><td style="font-size:11px;color:#0a6644;">Strong — Korean + collagen positioning</td></tr>
+          <tr><td>sheet masks for hydration</td><td style="text-align:center;"><span class="wmt-rank">#10</span></td><td>—</td><td style="font-size:11px;color:#0a6644;">Strong — buyer-intent query</td></tr>
+          <tr><td>sheet mask</td><td style="text-align:center;"><span class="wmt-rank">#10</span></td><td>409</td><td style="font-size:11px;color:var(--amber);">⚡ High-volume, competitive — hold this</td></tr>
+          <tr><td>sheet masks</td><td style="text-align:center;"><span class="wmt-rank">#29</span></td><td>409</td><td style="font-size:11px;color:var(--amber);">Push to top 10 — same audience</td></tr>
+          <tr><td>vitamin c mask</td><td style="text-align:center;"><span class="wmt-rank">#41</span></td><td>209</td><td style="font-size:11px;color:var(--ink3);">Good — variant-specific intent</td></tr>
+          <tr><td>daily sheet mask</td><td style="text-align:center;"><span class="wmt-rank">#66</span></td><td>137</td><td style="font-size:11px;color:var(--ink3);">Room to climb</td></tr>
+          <tr><td>face mask for dry skin</td><td style="text-align:center;"><span class="wmt-rank">#74</span></td><td>440</td><td style="font-size:11px;color:var(--amber);">High intent — grow this</td></tr>
+          <tr><td>collagen face mask</td><td style="text-align:center;"><span class="wmt-rank">#102</span></td><td>246</td><td style="font-size:11px;color:var(--amber);">⚡ High value — needs push to top 50</td></tr>
+          <tr><td>face masks</td><td style="text-align:center;"><span class="wmt-rank">#277</span></td><td>154,876</td><td style="font-size:11px;color:var(--rose);">Massive term — long-term target</td></tr>
+        </table>
+      </div>
+
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,113,206,0.15);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;">Walmart Insights</div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">⚠</span><span style="font-size:13px;"><strong>Face masks were blocked on Walmart for listing violations from launch (Mar 9) through early May — approximately 8 weeks of lost sales.</strong> The listing was live but suppressed due to violations (likely related to the "Do Not Flush" symbol issue or similar compliance flag, the same category as the CA/WA Amazon violation). Jun 1–15 is effectively the first real selling window.</span></div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">✅</span><span style="font-size:13px;"><strong>#1 for "korean face mask" on Walmart despite only ~6 weeks of active selling.</strong> The Variety Pack (72XZDO2VCG4I) is ranking #1 for "korean face mask" (212 competitors), #4 for "avocado face mask" (35 competitors), and #10 for "sheet mask" (409 competitors) — all organically, with $0 in Walmart ad spend. This is exceptional indexing velocity given the blocked launch period.</span></div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">⚡</span><span style="font-size:13px;"><strong>"Collagen face mask" at #102 is the highest-value ranking to move.</strong> It's the 11th-largest keyword and just outside top 100. "Face mask for dry skin" at #74 (440 competitors) is another priority. A Walmart Sponsored Products push on these two terms could move them into top 50 fast given the active organic signal already there.</span></div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">📈</span><span style="font-size:13px;"><strong>Jun 1–15 shows $27 from 4 units — the ramp is starting.</strong> With the violation resolved and strong keyword rankings already in place, the face mask line on Walmart is positioned for a significant revenue step-up in June. Watch the Jun 30 data closely — if rankings hold, July could see wipes-level performance ($150–$200/month).</span></div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">🎯</span><span style="font-size:13px;"><strong>Walmart Connect priority: "sheet masks" (#29 → target top 10), "collagen face mask" (#102 → target top 50).</strong> Both have the organic rank signal that makes PPC efficient. Korean and avocado terms are already top-10 organically — protect them with sponsored placement once ads launch.</span></div>
+      </div>
+    </div>
+    
+    
     <div class="two">
       <div class="sec">
         <div class="sec-title">May Top Performers (by units)</div>
@@ -545,6 +648,80 @@ table.data tr:hover td{background:var(--bg);}
         <div class="pulse-item"><div class="p-lbl">Price</div><div class="p-val">$7.00</div><div class="p-note">30 count · $0.23/wipe</div></div>
       </div>
     </div>
+
+    
+    <!-- ── WALMART SECTION: Makeup Wipes ── -->
+    <div class="wmt-section">
+      <div class="wmt-header">
+        <span class="wmt-logo">walmart</span>
+        <span class="wmt-title">Makeup Wipes — Walmart Performance</span>
+        <span class="wmt-badge">Live since Mar 9, 2026</span>
+      </div>
+
+      <div class="wmt-pulse">
+        <div class="wmt-card wmt-up">
+          <div class="wc-lbl">May Revenue</div>
+          <div class="wc-val">$193</div>
+          <div class="wc-note">20 units · 19 orders · $8.45 AUR</div>
+        </div>
+        <div class="wmt-card wmt-up">
+          <div class="wc-lbl">3-Mo Total</div>
+          <div class="wc-val">$449.90</div>
+          <div class="wc-note">Mar $84 · Apr $173 · May $193</div>
+        </div>
+        <div class="wmt-card wmt-up">
+          <div class="wc-lbl">Organic Rank</div>
+          <div class="wc-val">3 Top-10</div>
+          <div class="wc-note">10 keywords in top 50 · $0 ad spend</div>
+        </div>
+        <div class="wmt-card wmt-watch">
+          <div class="wc-lbl">Ad Spend</div>
+          <div class="wc-val">$0</div>
+          <div class="wc-note">100% organic — Walmart Connect untapped</div>
+        </div>
+      </div>
+
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;">Amazon vs Walmart Monthly Trend</div>
+      <table class="chan-table">
+        <tr>
+          <th>Period</th>
+          <th>AMZ Units</th><th>AMZ Revenue</th>
+          <th class="wmt-th">WMT Units</th><th class="wmt-th">WMT Revenue</th>
+        </tr>
+        <tr><td><strong>Mar 2026</strong></td><td>57</td><td>$354</td><td style="color:var(--wmt);font-weight:600;">12</td><td style="color:var(--wmt);font-weight:600;">$84 <span class="chan-delta eq">21% of AMZ</span></td></tr>
+        <tr><td><strong>Apr 2026</strong></td><td>69</td><td>$434</td><td style="color:var(--wmt);font-weight:600;">23</td><td style="color:var(--wmt);font-weight:600;">$173 <span class="chan-delta up">40% of AMZ</span></td></tr>
+        <tr><td><strong>May 2026</strong></td><td>76</td><td>$493</td><td style="color:var(--wmt);font-weight:600;">20</td><td style="color:var(--wmt);font-weight:600;">$193 <span class="chan-delta up">39% of AMZ</span></td></tr>
+        <tr><td><strong>Jun 1–15</strong></td><td>31</td><td>$217</td><td style="color:var(--ink3);">—</td><td style="color:var(--ink3);">Pending</td></tr>
+      </table>
+
+      <div style="margin-top:14px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;">Walmart Keyword Rankings — Rose Water (5TB0Q6W1WVY8)</div>
+        <table class="chan-table">
+          <tr><th>Keyword</th><th class="wmt-th" style="text-align:center;">WMT Rank</th><th>Competing Products</th><th>Signal</th></tr>
+          <tr><td>korean makeup wipes</td><td style="text-align:center;"><span class="wmt-rank">#1</span></td><td>6</td><td style="font-size:11px;color:#0a6644;">🏆 Top of category — very low competition</td></tr>
+          <tr><td>korean face wipes</td><td style="text-align:center;"><span class="wmt-rank">#2</span></td><td>6</td><td style="font-size:11px;color:#0a6644;">🏆 Dominant — only 6 competitors</td></tr>
+          <tr><td>face wipes korean</td><td style="text-align:center;"><span class="wmt-rank">#2</span></td><td>6</td><td style="font-size:11px;color:#0a6644;">🏆 Same query set — owning this niche</td></tr>
+          <tr><td>korean makeup remover</td><td style="text-align:center;"><span class="wmt-rank">#14</span></td><td>79</td><td style="font-size:11px;color:var(--ink3);">Strong — growing category</td></tr>
+          <tr><td>make up remover wipes for face</td><td style="text-align:center;"><span class="wmt-rank">#17</span></td><td>53,146</td><td style="font-size:11px;color:var(--amber);">⚡ Largest market — huge upside at #17</td></tr>
+          <tr><td>sensitive skin makeup remover wipes</td><td style="text-align:center;"><span class="wmt-rank">#19</span></td><td>342</td><td style="font-size:11px;color:var(--ink3);">Good — targeted buyer intent</td></tr>
+          <tr><td>makeup remover wipes sensitive skin</td><td style="text-align:center;"><span class="wmt-rank">#28</span></td><td>249</td><td style="font-size:11px;color:var(--ink3);">Good — same intent, different query</td></tr>
+          <tr><td>make up remover wipes</td><td style="text-align:center;"><span class="wmt-rank">#43</span></td><td>2,353</td><td style="font-size:11px;color:var(--amber);">Room to grow — high volume</td></tr>
+          <tr><td>makeup remover wipes</td><td style="text-align:center;"><span class="wmt-rank">#73</span></td><td>373</td><td style="font-size:11px;color:var(--amber);">⚡ Priority — highest-volume term, only at #73</td></tr>
+          <tr><td>facial wipes</td><td style="text-align:center;"><span class="wmt-rank">#94</span></td><td>420</td><td style="font-size:11px;color:var(--amber);">Close to page 1 territory</td></tr>
+        </table>
+      </div>
+
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,113,206,0.15);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;">Walmart Insights</div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">✅</span><span style="font-size:13px;"><strong>$449.90 in 3 months with $0 ad spend — strong organic launch.</strong> Since launching March 9, wipes have grown from $84 (Mar) to $193 (May), entirely on organic visibility. Revenue is now 39% of Amazon wipes volume. This is a healthy Walmart launch trajectory without any paid support yet.</span></div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">🏆</span><span style="font-size:13px;"><strong>Dominant in the Korean wipes niche on Walmart — #1 and #2 for Korean-specific terms.</strong> "Korean makeup wipes," "korean face wipes," and "face wipes korean" are all ranked #1 or #2 with only 6 competing products. This is first-mover advantage. The Korean positioning that's competitive on Amazon is uncrowded on Walmart.</span></div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">⚡</span><span style="font-size:13px;"><strong>"Makeup remover wipes" at #73 is the biggest ranking opportunity.</strong> This is the highest-volume wipes term on Walmart (373 competing products — manageable). Currently at #73 — just outside top-50. A small PPC push on this exact-match term would accelerate indexing. "Make up remover wipes for face" at #17 with 53,146 competitors is a breakout if we can hold that rank.</span></div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">💡</span><span style="font-size:13px;"><strong>Only the Rose Water variant is being tracked — other scents likely also ranking.</strong> The Helium 10 Walmart KT only shows data for the Rose Water variant (5TB0Q6W1WVY8). Other scent variants (Charcoal, Collagen, etc.) are live on Walmart and likely accumulating rank independently. Set up individual tracking for the top 3 scents to get full visibility.</span></div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">🎯</span><span style="font-size:13px;"><strong>Next lever: Walmart Connect ads on Charcoal and Collagen scents.</strong> With $0 current ad spend, even a $5/day Walmart Sponsored Products campaign on "makeup remover wipes" and "face wipes" targeting Charcoal and Collagen variants could push the #73 ranking toward #10–20 and significantly increase units. AUR is $7 — budget tightly.</span></div>
+      </div>
+    </div>
+    
+    
     <div class="two">
       <div class="sec">
         <div class="sec-title">May Variant Performance</div>
@@ -681,6 +858,48 @@ table.data tr:hover td{background:var(--bg);}
       <div class="pulse-item g"><div class="p-lbl">1 Organic Rank</div><div class="p-val">#199</div><div class="p-note">"glass skin face mask" — 1,848 vol</div></div>
     </div>
   </div>
+
+    
+    <!-- ── WALMART SECTION: Hydrogel ── -->
+    <div class="wmt-section">
+      <div class="wmt-header">
+        <span class="wmt-logo">walmart</span>
+        <span class="wmt-title">Hydrogel Mask — Walmart Performance</span>
+        <span class="wmt-badge">Live · No keywords ranking yet</span>
+      </div>
+
+      <div class="wmt-pulse">
+        <div class="wmt-card wmt-watch">
+          <div class="wc-lbl">Revenue</div>
+          <div class="wc-val">$0</div>
+          <div class="wc-note">No confirmed sales yet</div>
+        </div>
+        <div class="wmt-card wmt-watch">
+          <div class="wc-lbl">Organic Rank</div>
+          <div class="wc-val">0 Top-50</div>
+          <div class="wc-note">Hydrogel (39J8C0JWSSC8) · not yet indexing</div>
+        </div>
+        <div class="wmt-card">
+          <div class="wc-lbl">Category Fit</div>
+          <div class="wc-val">Strong</div>
+          <div class="wc-note">Less saturated than Amazon</div>
+        </div>
+        <div class="wmt-card wmt-watch">
+          <div class="wc-lbl">Priority</div>
+          <div class="wc-val">Low</div>
+          <div class="wc-note">Fix Amazon BB first</div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,113,206,0.15);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;">Walmart Insights</div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">⚠</span><span style="font-size:13px;"><strong>Hydrogel has 0 keywords in top 50 on Walmart as of June 15.</strong> The Helium 10 KT for product 39J8C0JWSSC8 shows no organic rankings — meaning the listing is either very new, not yet indexed, or the keywords tracked don't match what Walmart is indexing it for. Not surprising given the Amazon Buy Box issues; same root cause likely applies on Walmart.</span></div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">💡</span><span style="font-size:13px;"><strong>Walmart hydrogel category less saturated than Amazon.</strong> "Korean face mask" ranks #1 for the masks variety pack — the hydrogel's unique positioning ("overnight hydrogel," "glass skin") is even more differentiated on Walmart where the category has fewer competitors. Once the Amazon situation is resolved and listing health confirmed, a Walmart refresh on the hydrogel listing could accelerate quickly.</span></div>
+        <div class="log-finding" style="margin-bottom:8px;"><span class="fi">🎯</span><span style="font-size:13px;"><strong>Action: audit the Walmart hydrogel listing for compliance flags.</strong> If masks had a violation-based block on Walmart, the hydrogel may have one too. Check listing status in Walmart Seller Center — look for any suppression flags, content violations, or item setup issues before investing in keyword or PPC strategy.</span></div>
+      </div>
+    </div>
+    
+    
 
   <div class="two">
     <div class="sec">
@@ -2303,7 +2522,17 @@ KEY INSIGHTS:
 - Ceramide NP runs through every mask — K-beauty barrier positioning not leveraged
 
 COMPLIANCE — SAFE: "helps soften," "supports moisture barrier," "supports a radiant appearance," "clinically tested" (if applicable), "developed with K-beauty-grade actives"
-COMPLIANCE — AVOID: "treats," "cures," "anti-aging" without certification, "reduces wrinkles" as absolute`;
+COMPLIANCE — AVOID: "treats," "cures," "anti-aging" without certification, "reduces wrinkles" as absolute
+
+WALMART CHANNEL (as of Jun 15, 2026)
+   Makeup Wipes (live since Mar 2026, organic only, $0 ad spend):
+   - Mar 2026: 20 units, $133 revenue
+   - Apr 2026: 23 units, $172.90 revenue  
+   - May 2026: 20 units, $193 revenue
+   - 3-month total: $498.90 organic revenue
+   Face Masks: NOT yet on Walmart.
+   Hydrogel: NOT yet on Walmart.
+   Walmart opportunity: launch masks (top 5 scents) and hydrogel after Amazon stabilizes.`;
 
 const PROD_DETAILS = {
   masks: { name: 'PB & Jay Face Masks (Purenature)', focus: 'All 13 SKUs in one variation family sharing 2095 sessions. Alternate seller holds Buy Box at $9.99 vs $14.00 MSRP — 177 units remaining, ~1 month to sell-through. Conv% reflects her price, NOT listing quality. No action until sell-through.' },
@@ -2461,7 +2690,14 @@ PRODUCT LINES:
 3. Hydrogel Face Mask — single SKU · $20.00 · 5-pack · BSR #9,456 Facial Masks · 4.6★ / 29 reviews
    May: 27 sessions · 0 units · 0% conv · $0 revenue
 KEY ORGANIC RANKINGS: 0 for face masks (all 57 kws >306) · 0 for wipes (all 54 kws >306) · 3 for hydrogel
-HIGH-PRIORITY KEYWORDS: "mascarilla de colageno" (68.2% ABA, 602 competing) · "quia face mask" (76% ABA, 129 competing) · "individual makeup remover wipes" (68.9% ABA, 748 competing) · "rice water face wipes" (95% ABA, 193 competing)`;
+HIGH-PRIORITY KEYWORDS: "mascarilla de colageno" (68.2% ABA, 602 competing) · "quia face mask" (76% ABA, 129 competing) · "individual makeup remover wipes" (68.9% ABA, 748 competing) · "rice water face wipes" (95% ABA, 193 competing)
+
+WALMART CHANNEL (all products launched March 9, 2026 — $0 ad spend, all organic):
+   WIPES (Rose Water 5TB0Q6W1WVY8 tracked): Mar $84/12u · Apr $173/23u · May $193/20u = $450 total
+   WMT ranks: #1 korean makeup wipes · #2 korean face wipes · #17 make up remover wipes for face · #73 makeup remover wipes
+   MASKS (Variety Pack 72XZDO2VCG4I): BLOCKED Mar 9–early May for listing violation. Jun 1-15: $27/4 units (first real sales)
+   WMT ranks: #1 korean face mask · #4 avocado face mask · #10 sheet mask/korean collagen sheet mask
+   HYDROGEL (39J8C0JWSSC8): 0 keywords ranking in WMT top 50 — possible compliance issue, investigate`;
 
 const pbj_uploadedFiles = { br: null, kw: null, ads: null };
 
