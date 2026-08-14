@@ -289,6 +289,7 @@ table.data tr:hover td{background:var(--bg);}
   <button class="tab-btn" onclick="switchTab('masks',this)">Face Masks</button>
   <button class="tab-btn" onclick="switchTab('wipes',this)">Makeup Wipes</button>
   <button class="tab-btn" onclick="switchTab('hydrogel',this)">Hydrogel Mask</button>
+  <button class="tab-btn" onclick="switchTab('blemish',this)">Blemish Patches</button>
   <button class="tab-btn" onclick="switchTab('organic',this)">Organic</button>
   <button class="tab-btn" onclick="switchTab('competitors',this)">Competitors</button>
   <button class="tab-btn" onclick="switchTab('listing',this)">Listing Audit</button>
@@ -300,29 +301,50 @@ table.data tr:hover td{background:var(--bg);}
 <!-- ══ OVERVIEW ══ -->
 <div id="tab-overview" class="page active">
 
-  <div class="alert">
-    <span style="font-size:16px;flex-shrink:0;">✨</span>
-    <span><strong>3 product lines · 25 active SKUs · Multi-channel (Amazon + Walmart) · June 2026 (Jun 1–15).</strong> Makeup Wipes are the <strong>revenue driver</strong>: 31 units · $217 · 14.2% conv% from 218 sessions. Face Masks converting at 1.1% (2 units / 184 sessions) — alternate seller still active, monitor weekly. Hydrogel Mask: 672 sessions, 0 units, 0% Buy Box — visibility is there, conversion blocked by BB loss. <strong>PPC ACOS 133%</strong> — Korean keywords not converting; Charcoal and Collagen terms performing. <strong>Walmart:</strong> Wipes $449.90 organic in 3 months ($0 ads) · Masks unblocked May, $27 in Jun 1–15 · Ranking #1 "korean face mask" &amp; #1 "korean makeup wipes" organically.</span>
+  <div class="alert warn">
+    <span style="font-size:16px;flex-shrink:0;">🚨</span>
+    <span><strong>Organic ranking collapse, Jul 27 → Aug 10.</strong> Every meaningful organic rank the brand had built (Korean makeup wipes #8–25, avocado face mask #33–39, rice water wipes #57–58, mascarilla de colageno #234–268, face mask set #125–140) fell to &gt;306 by Aug 10 — only 1 of ~156 tracked keywords ranks at all now ("gentle makeup remover wipes" #212). This lines up with wipes sessions cratering in August (8 of 12 variants went to 0 sessions) and PPC efficiency collapsing (ACOS 85% in July → ~260% in August). Investigate listing suppression / inventory / pricing changes immediately.</span>
   </div>
 
-  <!-- 3 product family cards -->
+  <div class="alert">
+    <span style="font-size:16px;flex-shrink:0;">✨</span>
+    <span><strong>4 product lines · 31 active SKUs · Multi-channel (Amazon + Walmart) · July 2026 (Full) + Aug 2026 (1–14, partial).</strong> <strong>Blemish Patches launched in July</strong> and were the strongest debut in the portfolio: 366 sessions, 127 units, $1,191.50 revenue, 34.7% blended conv% — but August partial shows the same collapse pattern (290 sessions, only 13 units, 4.5% conv%). Makeup Wipes: July 671 sessions / 52 units / $364 (7.8% conv%) → August partial 129 sessions / 2 units / $14 (1.6% conv%). Face Masks: July 618 sessions / 5 units / $30 (0.8% conv%) → August 157 sessions / 4 units / $24 (2.5% conv%). <strong>Hydrogel Mask's first real sale:</strong> 0 units in June/July → 4 units, $80, 50% conv% in August partial — visibility finally converting. <strong>PPC:</strong> Jun $185 spend/$243 sales → Jul $237/$278 (85% ACOS) → Aug (partial) $222/$86 (~260% ACOS) — "pimple patches" is the biggest single spend line, breakeven in July, underwater in August.</span>
+  </div>
+
+  <!-- 4 product family cards -->
   <div class="prod-family">
     <div class="family-card best">
-      <div class="family-top">Revenue Driver</div>
+      <div class="family-top">Strongest Launch</div>
+      <div class="fc-line">Cleanspot + Novelty · 6 SKUs</div>
+      <div class="fc-name">Blemish Patches</div>
+      <div class="fc-sub">$9.00 · 36 count · Launched July 2026</div>
+      <table class="data" style="font-size:12px;">
+        <tr><td style="color:var(--ink3);">Sessions (Jul)</td><td><strong>366</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Units</td><td><strong>127</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Revenue</td><td><strong>$1,191.50</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Avg Conv%</td><td><strong style="color:var(--navy);">34.7%</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Aug 1–14 (partial)</td><td><strong style="color:var(--rose);">13 units / 4.5% conv</strong></td></tr>
+      </table>
+      <div class="chips" style="margin-top:10px;">
+        <span class="chip chip-g">✓ Strongest July debut across all lines</span>
+        <span class="chip chip-r">⚠ Conv% collapsed in August</span>
+      </div>
+    </div>
+    <div class="family-card">
       <div class="fc-line">Cleancare · 12 Scent Variants</div>
       <div class="fc-name">Makeup Wipes</div>
       <div class="fc-sub">$7.00 · 30 count · B0G547LV5T (tracker)</div>
       <table class="data" style="font-size:12px;">
-        <tr><td style="color:var(--ink3);">Sessions (May)</td><td><strong>632</strong></td></tr>
-        <tr><td style="color:var(--ink3);">Units</td><td><strong>57</strong></td></tr>
-        <tr><td style="color:var(--ink3);">Revenue</td><td><strong>$399.00</strong></td></tr>
-        <tr><td style="color:var(--ink3);">Avg Conv%</td><td><strong style="color:var(--navy);">9.0%</strong></td></tr>
-        <tr><td style="color:var(--ink3);">Buy Box</td><td><strong>~97%</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Sessions (Jul)</td><td><strong>671</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Units</td><td><strong>52</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Revenue</td><td><strong>$364.00</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Avg Conv%</td><td><strong style="color:var(--navy);">7.8%</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Aug 1–14 (partial)</td><td><strong style="color:var(--rose);">2 units / 1.6% conv · 8 SKUs at 0 sessions</strong></td></tr>
         <tr><td style="color:var(--ink3);">BSR</td><td><strong>#125</strong> Makeup Cleansing Wipes</td></tr>
       </table>
       <div class="chips" style="margin-top:10px;">
-        <span class="chip chip-g">✓ Charcoal variant top seller</span>
-        <span class="chip chip-a">0 organic keyword rankings</span>
+        <span class="chip chip-r">⚠ Sessions collapsed in August</span>
+        <span class="chip chip-a">Organic rankings lost since Jul 27</span>
       </div>
     </div>
     <div class="family-card">
@@ -330,15 +352,15 @@ table.data tr:hover td{background:var(--bg);}
       <div class="fc-name">Face Masks</div>
       <div class="fc-sub">$6.00 · 1 count · B0G547Y4K7 (Avocado anchor)</div>
       <table class="data" style="font-size:12px;">
-        <tr><td style="color:var(--ink3);">Sessions (May)</td><td><strong>2,095</strong></td></tr>
-        <tr><td style="color:var(--ink3);">Units</td><td><strong>19</strong></td></tr>
-        <tr><td style="color:var(--ink3);">Revenue</td><td><strong>$114.00</strong></td></tr>
-        <tr><td style="color:var(--ink3);">Avg Conv%</td><td><strong style="color:var(--rose);">0.9%</strong></td></tr>
-        <tr><td style="color:var(--ink3);">BSR</td><td><strong>#793</strong> Facial Masks</td></tr>
+        <tr><td style="color:var(--ink3);">Sessions (Jul)</td><td><strong>618</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Units</td><td><strong>5</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Revenue</td><td><strong>$30.00</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Avg Conv%</td><td><strong style="color:var(--rose);">0.8%</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Aug 1–14 (partial)</td><td><strong>4 units / 2.5% conv</strong></td></tr>
         <tr><td style="color:var(--ink3);">Rating</td><td><strong>4.6 ★</strong> (139 reviews)</td></tr>
       </table>
       <div class="chips" style="margin-top:10px;">
-        <span class="chip chip-r">0.9% conv — critical gap</span>
+        <span class="chip chip-r">Conv% still depressed — check alt. seller status</span>
         <span class="chip chip-a">Sessions shared across variation family</span>
       </div>
     </div>
@@ -347,28 +369,27 @@ table.data tr:hover td{background:var(--bg);}
       <div class="fc-name">Hydrogel Face Mask</div>
       <div class="fc-sub">$20.00 · 5-pack · B0G3YHD7LC</div>
       <table class="data" style="font-size:12px;">
-        <tr><td style="color:var(--ink3);">Sessions (May)</td><td><strong>27</strong></td></tr>
+        <tr><td style="color:var(--ink3);">Sessions (Jul)</td><td><strong>16</strong></td></tr>
         <tr><td style="color:var(--ink3);">Units</td><td><strong>0</strong></td></tr>
-        <tr><td style="color:var(--ink3);">Revenue</td><td><strong>$0.00</strong></td></tr>
-        <tr><td style="color:var(--ink3);">Conv%</td><td><strong style="color:var(--rose);">0.00%</strong></td></tr>
-        <tr><td style="color:var(--ink3);">BSR</td><td><strong>#9,456</strong> Facial Masks</td></tr>
+        <tr><td style="color:var(--ink3);">Aug 1–14 (partial)</td><td><strong style="color:var(--navy);">4 units / $80 / 50% conv — first real sales</strong></td></tr>
+        <tr><td style="color:var(--ink3);">BSR</td><td><strong>#9,456</strong> Facial Masks (last known)</td></tr>
         <tr><td style="color:var(--ink3);">Rating</td><td><strong>4.6 ★</strong> (29 reviews)</td></tr>
       </table>
       <div class="chips" style="margin-top:10px;">
-        <span class="chip chip-r">Near-zero traffic</span>
-        <span class="chip chip-g">1 organic rank: "glass skin face mask" #199</span>
+        <span class="chip chip-g">✓ First-ever conversions in August</span>
+        <span class="chip chip-a">All organic ranks lost by Aug 10</span>
       </div>
     </div>
   </div>
 
   <!-- Combined metrics -->
   <div class="cards">
-    <div class="card"><div class="lbl">Total Sessions (May)</div><div class="val">2,754</div><div class="sub">Masks 76% · Wipes 23% · Hydrogel 1%</div></div>
-    <div class="card"><div class="lbl">Total Units (May)</div><div class="val">76</div><div class="sub">$513 total revenue</div></div>
-    <div class="card bad"><div class="lbl">Blended Conv%</div><div class="val">2.8%</div><div class="sub">Masks pulling avg down</div></div>
-    <div class="card"><div class="lbl">Active SKUs</div><div class="val">25</div><div class="sub">12 wipes + 12 masks + 1 hydrogel</div></div>
-    <div class="card"><div class="lbl">Face Mask Rating</div><div class="val">4.6 ★</div><div class="sub">139 reviews · strong social proof</div></div>
-    <div class="card bad"><div class="lbl">Organic Rankings</div><div class="val">3</div><div class="sub">All 3 below p.1 — PPC dependent</div></div>
+    <div class="card"><div class="lbl">Total Sessions (Jul, full)</div><div class="val">1,671</div><div class="sub">Blemish 22% · Wipes 40% · Masks 37% · Hydrogel 1%</div></div>
+    <div class="card"><div class="lbl">Total Units (Jul, full)</div><div class="val">184</div><div class="sub">$1,585.50 total revenue</div></div>
+    <div class="card bad"><div class="lbl">Aug 1–14 Sessions</div><div class="val">584</div><div class="sub">23 units · $241.50 revenue (partial month)</div></div>
+    <div class="card"><div class="lbl">Active SKUs</div><div class="val">31</div><div class="sub">12 wipes + 13 masks + 1 hydrogel + 6 blemish</div></div>
+    <div class="card"><div class="lbl">Blemish Launch Revenue</div><div class="val">$1,191.50</div><div class="sub">127 units in first full month (Jul)</div></div>
+    <div class="card bad"><div class="lbl">Organic Rankings (Aug 10)</div><div class="val">1</div><div class="sub">Down from ~30+ ranked terms on Jul 16/27</div></div>
   </div>
 
   <div class="two">
@@ -390,18 +411,22 @@ table.data tr:hover td{background:var(--bg);}
       </div>
     </div>
     <div class="sec">
-      <div class="sec-title">May Priority Actions</div>
+      <div class="sec-title">Priority Actions — Post Jul/Aug Update</div>
       <div class="opp oh">
-        <div class="opp-hdr"><span class="pri" style="color:var(--amber);">Watch</span><span class="otag">Face Masks — Alternate Seller (~1 Month)</span></div>
-        <div class="obody"><strong>All 13 face mask SKUs share 2,095 monthly sessions in one variation family. An alternate seller holds the Buy Box at $9.99 vs. our $14.00 MSRP — 177 units remaining at ~176 units/month means ~1 month to sell-through.</strong> The 0.9% conversion reflects her lower price capturing the sale, not a listing quality problem. Individual variants convert at 10–12% when PB &amp; Jay holds the Buy Box. Listing is fully optimized. No action needed until she sells through — then launch PPC immediately.</div>
+        <div class="opp-hdr"><span class="pri" style="color:var(--rose);">Urgent</span><span class="otag">Diagnose the Aug ranking + traffic collapse</span></div>
+        <div class="obody"><strong>Between Jul 27 and Aug 10, virtually every organic keyword ranking the brand had built vanished (Korean makeup wipes #8→&gt;306, avocado face mask #33→&gt;306, rice water wipes #57→&gt;306, mascarilla de colageno #234→&gt;306).</strong> In the same window, 8 of 12 wipe variants dropped to 0 sessions, blemish patch conversion fell from 34.7% to 4.5%, and PPC ACOS rose from 85% to ~260%. Orders data shows no spike in cancellations, so this doesn't look like a fulfillment/return problem — check for a listing suppression, pricing change, inventory stockout, or a lost Buy Box across multiple SKUs.</div>
       </div>
       <div class="opp oh">
-        <div class="opp-hdr"><span class="pri">High</span><span class="otag">Traffic / Hydrogel</span></div>
-        <div class="obody"><strong>Hydrogel Mask had 27 sessions and 0 units in May.</strong> Only 1 organic ranking in the entire keyword set ("glass skin face mask" at #199). At $20 / 5-pack ($4/mask), this is well-priced against BIODANCE ($19/4-pack) and COSRX ($15/3-pack). PPC on "hydrogel face mask" and "overnight face mask" is the immediate lever.</div>
+        <div class="opp-hdr"><span class="pri" style="color:var(--navy);">High</span><span class="otag">Blemish Patches — Protect the July launch momentum</span></div>
+        <div class="obody"><strong>Blemish Patches were the strongest launch in the portfolio — 127 units and $1,191.50 in their first full month, with Donut, CatchPatch, and Fruity all converting 28–40%.</strong> PBJ0027 (Cleanspot Treatment) barely moved (3 sessions, 0 units in July) while its sibling PBJ0028 (Healing) sold 30 units — worth checking whether PBJ0027 has a listing, image, or inventory issue. August's steep conversion drop (34.7% → 4.5%) mirrors the broader collapse above and should be diagnosed together.</div>
+      </div>
+      <div class="opp oh">
+        <div class="opp-hdr"><span class="pri">High</span><span class="otag">Hydrogel — first real sales, keep the momentum</span></div>
+        <div class="obody"><strong>Hydrogel Mask went from 0 units in June and July to 4 units / $80 / 50% conversion in the first two weeks of August</strong> — its best performance on record, even as its organic keyword rankings disappeared entirely by Aug 10. Worth understanding what drove this (PPC, a review, a price change) before it's lost in the same pattern hitting the rest of the portfolio.</div>
       </div>
       <div class="opp om">
-        <div class="opp-hdr"><span class="pri">Medium</span><span class="otag">Organic / Wipes</span></div>
-        <div class="obody"><strong>Makeup Wipes have zero organic rankings across 54 tracked keywords.</strong> "Makeup remover wipes individually wrapped" (2,144 vol, 58.1% ABA, only 607 competing) and "individual makeup remover wipes" (2,492 vol, 68.9% ABA, 748 competing) stand out — very high conversion rates with low competition. PPC on these exact terms builds ranking velocity.</div>
+        <div class="opp-hdr"><span class="pri">Medium</span><span class="otag">PPC / "pimple patches"</span></div>
+        <div class="obody"><strong>"Pimple patches" is the single largest search term in the account — $85.53 spend for $85.50 in sales in July (breakeven), but $40.97 spend for only $19.00 in sales in August (partial) — well underwater.</strong> Worth a bid/placement review on this term specifically rather than pulling back blemish PPC broadly, since the novelty SKUs are still the best-converting products in the catalog.</div>
       </div>
     </div>
   </div>
@@ -424,14 +449,14 @@ table.data tr:hover td{background:var(--bg);}
 
   <div id="mask-overview">
     <div class="sec">
-      <div class="sec-title">Face Masks — Pulse <span class="badge bg-amber">Jun 1–15, 2026</span></div>
+      <div class="sec-title">Face Masks — Pulse <span class="badge bg-amber">Jul 2026 (Full) · Aug 1–14 (Partial)</span></div>
       <div class="pulse">
-        <div class="pulse-item w"><div class="p-lbl">BSR</div><div class="p-val">#793</div><div class="p-note">Facial Masks subcategory</div></div>
-        <div class="pulse-item g"><div class="p-lbl">Sessions</div><div class="p-val">184</div><div class="p-note">Across 13 variants</div></div>
-        <div class="pulse-item b"><div class="p-lbl">Units</div><div class="p-val">2</div><div class="p-note">$114.00 revenue</div></div>
-        <div class="pulse-item b"><div class="p-lbl">Conv%</div><div class="p-val">0.9%</div><div class="p-note">⚠ Benchmark 10–15%</div></div>
+        <div class="pulse-item w"><div class="p-lbl">BSR</div><div class="p-val">#793</div><div class="p-note">Facial Masks subcategory (last known)</div></div>
+        <div class="pulse-item g"><div class="p-lbl">Jul Sessions</div><div class="p-val">618</div><div class="p-note">Across 13 variants</div></div>
+        <div class="pulse-item b"><div class="p-lbl">Jul Units</div><div class="p-val">5</div><div class="p-note">$30.00 revenue</div></div>
+        <div class="pulse-item b"><div class="p-lbl">Jul Conv%</div><div class="p-val">0.8%</div><div class="p-note">⚠ Benchmark 10–15%</div></div>
+        <div class="pulse-item"><div class="p-lbl">Aug 1–14 Sessions</div><div class="p-val">157</div><div class="p-note">4 units · $24.00 · 2.5% conv</div></div>
         <div class="pulse-item g"><div class="p-lbl">Rating</div><div class="p-val">4.6 ★</div><div class="p-note">139 reviews</div></div>
-        <div class="pulse-item g"><div class="p-lbl">Price</div><div class="p-val">$6.00</div><div class="p-note">1 count single mask</div></div>
       </div>
     </div>
 
@@ -510,20 +535,19 @@ table.data tr:hover td{background:var(--bg);}
     
     <div class="two">
       <div class="sec">
-        <div class="sec-title">May Top Performers (by units)</div>
+        <div class="sec-title">July Top Performers (by units) <span class="badge bg-amber" style="font-size:9px;">Aug 1–14 in parentheses</span></div>
         <table class="data" style="font-size:12.5px;">
-          <thead><tr><th>Scent / Variant</th><th>Sessions</th><th>Units</th><th>Conv%</th><th>Revenue</th></tr></thead>
+          <thead><tr><th>Scent / Variant</th><th>Jul Sessions</th><th>Jul Units</th><th>Jul Conv%</th><th>Jul Revenue</th></tr></thead>
           <tbody>
-            <tr class="our"><td><strong>Collagen (PBJ0019)</strong></td><td>43</td><td>3</td><td>6.98%</td><td>$18.00</td></tr>
-            <tr class="our"><td><strong>Vitamin C (PBJ0020)</strong></td><td>36</td><td>4</td><td>11.11%</td><td>$24.00</td></tr>
-            <tr class="our"><td><strong>Rose (PBJ0024)</strong></td><td>28</td><td>3</td><td>10.71%</td><td>$18.00</td></tr>
-            <tr class="our"><td><strong>Green Tea (PBJ0017)</strong></td><td>25</td><td>3</td><td>12.00%</td><td>$18.00</td></tr>
-            <tr><td>Pomegranate (PBJ0016)</td><td>35</td><td>2</td><td>5.71%</td><td>$12.00</td></tr>
-            <tr><td>Cucumber (PBJ0015)</td><td>22</td><td>1</td><td>4.55%</td><td>$6.00</td></tr>
-            <tr><td>4 variants</td><td>~130</td><td>0</td><td>0%</td><td>$0.00</td></tr>
+            <tr class="our"><td><strong>Green Tea (PBJ0017)</strong></td><td>19</td><td>2</td><td>10.53%</td><td>$12.00</td></tr>
+            <tr class="our"><td><strong>Cucumber (PBJ0015)</strong> <span style="color:var(--ink3);">(Aug: 2u/14.29%)</span></td><td>30</td><td>1</td><td>3.33%</td><td>$6.00</td></tr>
+            <tr class="our"><td><strong>Avocado (PBJ0013)</strong></td><td>8</td><td>1</td><td>12.50%</td><td>$6.00</td></tr>
+            <tr class="our"><td><strong>Acai (PBJ0023)</strong></td><td>15</td><td>1</td><td>6.67%</td><td>$6.00</td></tr>
+            <tr><td>Honey (PBJ0014) <span style="color:var(--ink3);">(Aug: 2u/25%)</span></td><td>22</td><td>0</td><td>0%</td><td>$0.00</td></tr>
+            <tr><td>8 other variants + 12-pack (PBJ0025)</td><td>~524</td><td>0</td><td>0%</td><td>$0.00</td></tr>
           </tbody>
         </table>
-        <div style="margin-top:10px;font-size:12.5px;color:var(--ink3);line-height:1.6;">Vitamin C, Rose, and Green Tea converting at 10–12% individually — these three are the proof points that the listing works when traffic finds the right variant.</div>
+        <div style="margin-top:10px;font-size:12.5px;color:var(--ink3);line-height:1.6;">July was a weak month across the mask line — only 4 of 13 SKUs sold anything. Honey and Cucumber picked up in the first half of August (2 units each) even as the rest of the portfolio's traffic and rankings collapsed — worth a closer look at what's different about those two listings right now.</div>
       </div>
       <div class="sec">
         <div class="sec-title">Product Formula — All Variants</div>
@@ -551,14 +575,14 @@ table.data tr:hover td{background:var(--bg);}
         <div class="scent-card"><div class="s-name">🍯 Honey</div><div class="s-sku">PBJ0014</div><div class="s-benefit">Helps attract &amp; retain moisture. Supports smoother-looking skin. Antioxidant protection.</div><div class="s-ing">Honey Extract · Ceramide NP · Sodium Hyaluronate</div></div>
         <div class="scent-card"><div class="s-name">🥒 Cucumber</div><div class="s-sku">PBJ0015</div><div class="s-benefit">Refreshes &amp; cools skin. Helps reduce puffiness appearance. Lightweight hydration.</div><div class="s-ing">Cucumber Extract · Ceramide NP · Sodium Hyaluronate</div></div>
         <div class="scent-card"><div class="s-name">🍷 Pomegranate</div><div class="s-sku">PBJ0016</div><div class="s-benefit">Antioxidant support. Helps improve skin vitality. Supports radiant-looking complexion.</div><div class="s-ing">Pomegranate Extract · Ceramide NP · Sodium Hyaluronate</div></div>
-        <div class="scent-card"><div class="s-name">🍵 Green Tea / Tea Tree</div><div class="s-sku">PBJ0017</div><div class="s-benefit">Helps clarify oily-looking skin. Supports balanced complexion. Minimizes excess shine appearance.</div><div class="s-ing">Tea Tree Leaf Oil · Tea Tree Extract · Ceramide NP</div></div>
+        <div class="scent-card top-seller"><div class="s-name">🍵 Green Tea / Tea Tree</div><div class="s-sku">PBJ0017 · Top Jul converter (10.5%)</div><div class="s-benefit">Helps clarify oily-looking skin. Supports balanced complexion. Minimizes excess shine appearance.</div><div class="s-ing">Tea Tree Leaf Oil · Tea Tree Extract · Ceramide NP</div></div>
         <div class="scent-card"><div class="s-name">🖤 Charcoal</div><div class="s-sku">PBJ0018</div><div class="s-benefit">Helps absorb excess oil. Supports cleaner-looking pores. Leaves skin refreshed &amp; purified.</div><div class="s-ing">Charcoal Extract · Ceramide NP · Sodium Hyaluronate</div></div>
-        <div class="scent-card top-seller"><div class="s-name">💧 Collagen</div><div class="s-sku">PBJ0019 · Top converter</div><div class="s-benefit">Helps improve skin elasticity appearance. Supports firmer-looking complexion. Moisture for smooth skin.</div><div class="s-ing">Hydrolyzed Collagen · Collagen Extract · Soluble Collagen</div></div>
-        <div class="scent-card top-seller"><div class="s-name">✨ Vitamin C</div><div class="s-sku">PBJ0020 · 11.1% conv%</div><div class="s-benefit">Helps revitalize dull-looking skin. Supports radiant complexion. Antioxidant protection.</div><div class="s-ing">Magnesium Ascorbyl Phosphate · 3-O-Ethyl Ascorbic Acid · Sodium Ascorbyl Phosphate</div></div>
+        <div class="scent-card"><div class="s-name">💧 Collagen</div><div class="s-sku">PBJ0019 · 0 units Jul</div><div class="s-benefit">Helps improve skin elasticity appearance. Supports firmer-looking complexion. Moisture for smooth skin.</div><div class="s-ing">Hydrolyzed Collagen · Collagen Extract · Soluble Collagen</div></div>
+        <div class="scent-card"><div class="s-name">✨ Vitamin C</div><div class="s-sku">PBJ0020 · 0 units Jul</div><div class="s-benefit">Helps revitalize dull-looking skin. Supports radiant complexion. Antioxidant protection.</div><div class="s-ing">Magnesium Ascorbyl Phosphate · 3-O-Ethyl Ascorbic Acid · Sodium Ascorbyl Phosphate</div></div>
         <div class="scent-card"><div class="s-name">🌿 Aloe</div><div class="s-sku">PBJ0021</div><div class="s-benefit">Helps soothe &amp; comfort sensitive skin. Lightweight hydration. Supports calm, refreshed appearance.</div><div class="s-ing">Aloe Barbadensis Leaf Extract · Ceramide NP · Sodium Hyaluronate</div></div>
         <div class="scent-card"><div class="s-name">🌱 Retinol</div><div class="s-sku">PBJ0022</div><div class="s-benefit">Supports skin renewal. Helps improve texture appearance. Promotes smoother-looking skin.</div><div class="s-ing">Retinyl Palmitate · Tocopherol (Vit E) · Ceramide NP</div></div>
         <div class="scent-card"><div class="s-name">🫐 Acai</div><div class="s-sku">PBJ0023</div><div class="s-benefit">Powerful antioxidant support. Helps revitalize tired-looking skin. Supports healthier-looking glow.</div><div class="s-ing">Acai Fruit Extract · Ceramide NP · Sodium Hyaluronate</div></div>
-        <div class="scent-card top-seller"><div class="s-name">🌸 Rose</div><div class="s-sku">PBJ0024 · 10.7% conv%</div><div class="s-benefit">Helps soothe &amp; comfort skin. Provides gentle hydration. Supports softer-feeling skin.</div><div class="s-ing">Rosa Damascena Flower Water · Ceramide NP · Sodium Hyaluronate</div></div>
+        <div class="scent-card"><div class="s-name">🌸 Rose</div><div class="s-sku">PBJ0024 · 0 units Jul</div><div class="s-benefit">Helps soothe &amp; comfort skin. Provides gentle hydration. Supports softer-feeling skin.</div><div class="s-ing">Rosa Damascena Flower Water · Ceramide NP · Sodium Hyaluronate</div></div>
         <div class="scent-card" style="border-color:var(--amber);"><div class="s-name">🎁 Variety 12-Pack</div><div class="s-sku">PBJ0025 · B0G549VXFH</div><div class="s-benefit">One of each of the 12 masks above. All skin types. Gift set / sampler positioning.</div><div class="s-ing">All above formulas included</div></div>
       </div>
     </div>
@@ -626,7 +650,7 @@ table.data tr:hover td{background:var(--bg);}
 
   <div class="alert good">
     <span style="font-size:16px;flex-shrink:0;">✅</span>
-    <span><strong>12 scent variants · No variety pack.</strong> Charcoal is the top-selling variant (16 units, 13.45% conv% in May). BSR #125 in Makeup Cleansing Wipes. Buy Box ~97–100% across variants. 9.0% average conversion is solid — the constraint is zero organic rankings.</span>
+    <span><strong>12 scent variants · No variety pack.</strong> July was solid (52 units, 7.8% avg conv%), but August 1–14 shows a sharp collapse: only 2 units across all 12 variants, and 8 of 12 SKUs registered zero sessions. This lines up with the loss of every organic ranking the line had built (Korean makeup wipes was #8 on Jul 16) by Aug 10 — treat this as the priority diagnostic item for the brand.</span>
   </div>
 
   <div class="prod-tabs">
@@ -638,14 +662,14 @@ table.data tr:hover td{background:var(--bg);}
 
   <div id="wipe-overview">
     <div class="sec">
-      <div class="sec-title">Makeup Wipes — Pulse <span class="badge bg-green">Jun 1–15, 2026</span></div>
+      <div class="sec-title">Makeup Wipes — Pulse <span class="badge bg-red">Jul 2026 (Full) · Aug Collapse</span></div>
       <div class="pulse">
-        <div class="pulse-item g"><div class="p-lbl">BSR</div><div class="p-val">#125</div><div class="p-note">Makeup Cleansing Wipes</div></div>
-        <div class="pulse-item"><div class="p-lbl">Sessions</div><div class="p-val">218</div><div class="p-note">Jun 1–15 · 12 variants</div></div>
-        <div class="pulse-item"><div class="p-lbl">Units</div><div class="p-val">31</div><div class="p-note">$217 revenue</div></div>
-        <div class="pulse-item g"><div class="p-lbl">Avg Conv%</div><div class="p-val">9.0%</div><div class="p-note">↑ Above 7% floor</div></div>
-        <div class="pulse-item g"><div class="p-lbl">Buy Box</div><div class="p-val">~97%</div><div class="p-note">Most variants 100%</div></div>
-        <div class="pulse-item"><div class="p-lbl">Price</div><div class="p-val">$7.00</div><div class="p-note">30 count · $0.23/wipe</div></div>
+        <div class="pulse-item g"><div class="p-lbl">BSR</div><div class="p-val">#125</div><div class="p-note">Makeup Cleansing Wipes (last known)</div></div>
+        <div class="pulse-item"><div class="p-lbl">Jul Sessions</div><div class="p-val">671</div><div class="p-note">12 variants, full month</div></div>
+        <div class="pulse-item"><div class="p-lbl">Jul Units</div><div class="p-val">52</div><div class="p-note">$364 revenue</div></div>
+        <div class="pulse-item g"><div class="p-lbl">Jul Conv%</div><div class="p-val">7.8%</div><div class="p-note">Near 7% floor</div></div>
+        <div class="pulse-item b"><div class="p-lbl">Aug 1–14 Sessions</div><div class="p-val">129</div><div class="p-note">🚨 8 of 12 SKUs at 0 sessions</div></div>
+        <div class="pulse-item b"><div class="p-lbl">Aug 1–14 Conv%</div><div class="p-val">1.6%</div><div class="p-note">2 units · $14 revenue</div></div>
       </div>
     </div>
 
@@ -724,25 +748,25 @@ table.data tr:hover td{background:var(--bg);}
     
     <div class="two">
       <div class="sec">
-        <div class="sec-title">May Variant Performance</div>
+        <div class="sec-title">July Variant Performance <span class="badge bg-red" style="font-size:9px;">Charcoal at 0 sessions all month</span></div>
         <table class="data" style="font-size:12.5px;">
-          <thead><tr><th>Scent</th><th>Sessions</th><th>Units</th><th>Conv%</th><th>Revenue</th><th>Buy Box</th></tr></thead>
+          <thead><tr><th>Scent</th><th>Jul Sessions</th><th>Jul Units</th><th>Jul Conv%</th><th>Jul Revenue</th></tr></thead>
           <tbody>
-            <tr class="our"><td><strong>Charcoal (PBJ0006)</strong></td><td>119</td><td>16</td><td><span class="pill pill-g">13.45%</span></td><td>$112.00</td><td>98.43%</td></tr>
-            <tr class="our"><td><strong>Collagen (PBJ0007)</strong></td><td>66</td><td>8</td><td><span class="pill pill-g">12.12%</span></td><td>$56.00</td><td>100%</td></tr>
-            <tr class="our"><td><strong>Pomegranate (PBJ0004)</strong></td><td>35</td><td>7</td><td><span class="pill pill-g">20.00%</span></td><td>$49.00</td><td>100%</td></tr>
-            <tr><td>Apricot (PBJ0001)</td><td>62</td><td>4</td><td>6.45%</td><td>$28.00</td><td>98.61%</td></tr>
-            <tr><td>Charcoal/other</td><td>37</td><td>4</td><td>10.81%</td><td>$28.00</td><td>100%</td></tr>
-            <tr><td>Cucumber (PBJ0003)</td><td>58</td><td>4</td><td>6.90%</td><td>$28.00</td><td>100%</td></tr>
-            <tr><td>Coconut (PBJ0010)</td><td>27</td><td>4</td><td>14.81%</td><td>$28.00</td><td>100%</td></tr>
-            <tr><td>Honey (PBJ0002)</td><td>34</td><td>3</td><td>8.82%</td><td>$21.00</td><td>100%</td></tr>
-            <tr><td>Aloe (PBJ0009)</td><td>34</td><td>3</td><td>8.82%</td><td>$21.00</td><td>100%</td></tr>
-            <tr><td>Green Tea (PBJ0005)</td><td>29</td><td>2</td><td>6.90%</td><td>$14.00</td><td>87.88%</td></tr>
-            <tr><td>Vit C / Lemon (PBJ0008)</td><td>52</td><td>1</td><td>1.92%</td><td>$7.00</td><td>23.64%</td></tr>
-            <tr><td>Rose (PBJ0012)</td><td>79</td><td>1</td><td>1.27%</td><td>$7.00</td><td>26.44%</td></tr>
+            <tr class="our"><td><strong>Collagen (PBJ0007)</strong></td><td>51</td><td>14</td><td><span class="pill pill-g">27.45%</span></td><td>$98.00</td></tr>
+            <tr class="our"><td><strong>Green Tea (PBJ0005)</strong></td><td>49</td><td>13</td><td><span class="pill pill-g">26.53%</span></td><td>$91.00</td></tr>
+            <tr class="our"><td><strong>Coconut (PBJ0010)</strong></td><td>86</td><td>9</td><td><span class="pill pill-g">10.47%</span></td><td>$63.00</td></tr>
+            <tr><td>Pomegranate (PBJ0004)</td><td>42</td><td>6</td><td>14.29%</td><td>$42.00</td></tr>
+            <tr><td>Honey (PBJ0002)</td><td>34</td><td>3</td><td>8.82%</td><td>$21.00</td></tr>
+            <tr><td>Cucumber (PBJ0003)</td><td>14</td><td>2</td><td>14.29%</td><td>$14.00</td></tr>
+            <tr><td>Aloe (PBJ0009)</td><td>37</td><td>2</td><td>5.41%</td><td>$14.00</td></tr>
+            <tr><td>Apricot (PBJ0001)</td><td>37</td><td>2</td><td>5.41%</td><td>$14.00</td></tr>
+            <tr><td>Chamomile (PBJ0011)</td><td>20</td><td>1</td><td>5.00%</td><td>$7.00</td></tr>
+            <tr style="background:var(--rose-light);"><td><strong>Charcoal (PBJ0006)</strong> — former top seller</td><td><strong>0</strong></td><td>0</td><td>0%</td><td>$0.00</td></tr>
+            <tr><td>Vit C / Lemon (PBJ0008)</td><td>148</td><td>0</td><td>0%</td><td>$0.00</td></tr>
+            <tr><td>Rose (PBJ0012)</td><td>153</td><td>0</td><td>0%</td><td>$0.00</td></tr>
           </tbody>
         </table>
-        <div style="margin-top:10px;font-size:12.5px;color:var(--rose);line-height:1.6;">⚠ Vitamin C and Rose variants have 23–26% Buy Box — investigate third-party sellers or suppression issues.</div>
+        <div style="margin-top:10px;font-size:12.5px;color:var(--rose);line-height:1.6;">🚨 Charcoal — the variant that carried the line in May/June — had zero sessions for the entire month of July. That's a listing/inventory problem, not a demand problem, and predates the broader August collapse. Check this SKU's status first. Vitamin C and Rose continue to get sessions (148 and 153) without converting at all — the Buy Box suppression flagged previously likely never resolved.</div>
       </div>
       <div class="sec">
         <div class="sec-title">Formula Base — All Variants</div>
@@ -844,18 +868,18 @@ table.data tr:hover td{background:var(--bg);}
 
   <div class="alert warn">
     <span style="font-size:16px;flex-shrink:0;">🚨</span>
-    <span><strong>Critical:</strong> Hydrogel Mask had 27 sessions and 0 units in May. BSR #9,456 — vs. BIODANCE at top 10. This product is well-priced ($4/mask vs $4.75 for BIODANCE, $5 for COSRX) with a 4.6★ rating. The problem is visibility, not product quality.</span>
+    <span><strong>Update:</strong> Hydrogel Mask converted for the first time in August — 4 units, $80, 50% conv% from just 8 sessions in the first two weeks. That's a complete reversal after 0 units in both June and July. At the same time, all 3 organic rankings the product had (glass skin face mask #199, mascarilla de colageno #284, korean collagen hydrogel mask #235) were gone by Aug 10. Worth understanding what drove the August conversions — it wasn't organic search.</span>
   </div>
 
   <div class="sec">
-    <div class="sec-title">Hydrogel Face Mask — Pulse <span class="badge bg-red">Jun 1–15, 2026 · BB Loss Critical</span></div>
+    <div class="sec-title">Hydrogel Face Mask — Pulse <span class="badge bg-green">Aug 1–14, 2026 · First Real Sales</span></div>
     <div class="pulse">
-      <div class="pulse-item b"><div class="p-lbl">BSR</div><div class="p-val">#9,456</div><div class="p-note">Facial Masks — far from leaders</div></div>
-      <div class="pulse-item b"><div class="p-lbl">Sessions</div><div class="p-val">672</div><div class="p-note">Traffic strong · BB at 0%</div></div>
-      <div class="pulse-item b"><div class="p-lbl">Units</div><div class="p-val">0</div><div class="p-note">$0 revenue in May</div></div>
-      <div class="pulse-item w"><div class="p-lbl">Price</div><div class="p-val">$20.00</div><div class="p-note">5-pack · $4.00/mask</div></div>
-      <div class="pulse-item g"><div class="p-lbl">Rating</div><div class="p-val">4.6 ★</div><div class="p-note">29 reviews — thin but positive</div></div>
-      <div class="pulse-item g"><div class="p-lbl">1 Organic Rank</div><div class="p-val">#199</div><div class="p-note">"glass skin face mask" — 1,848 vol</div></div>
+      <div class="pulse-item b"><div class="p-lbl">BSR</div><div class="p-val">#9,456</div><div class="p-note">Facial Masks (last known)</div></div>
+      <div class="pulse-item"><div class="p-lbl">Jul Sessions</div><div class="p-val">16</div><div class="p-note">0 units, $0 — same as June</div></div>
+      <div class="pulse-item g"><div class="p-lbl">Aug 1–14 Sessions</div><div class="p-val">8</div><div class="p-note">Low traffic, high conversion</div></div>
+      <div class="pulse-item g"><div class="p-lbl">Aug 1–14 Units</div><div class="p-val">4</div><div class="p-note">$80.00 revenue</div></div>
+      <div class="pulse-item g"><div class="p-lbl">Aug 1–14 Conv%</div><div class="p-val">50%</div><div class="p-note">Best conversion in the portfolio</div></div>
+      <div class="pulse-item b"><div class="p-lbl">Organic Ranks</div><div class="p-val">0</div><div class="p-note">All 3 prior ranks gone by Aug 10</div></div>
     </div>
   </div>
 
@@ -966,22 +990,182 @@ table.data tr:hover td{background:var(--bg);}
 </div>
 
 <!-- ══ ORGANIC ══ -->
-<div id="tab-organic" class="page">
-  <div class="alert warn">
-    <span style="font-size:16px;flex-shrink:0;">⚠</span>
-    <span><strong>Critical organic gap:</strong> Across all three product lines and 156 tracked keywords, PB &amp; Jay has only <strong>3 meaningful organic rankings</strong> — all below page 3. The brand is entirely PPC-dependent for non-brand traffic. Spanish-language terms represent the fastest path to organic rankings given lower competition (200–800 competing products vs. 5,000+ for English terms).</span>
+
+<!-- ════════════════════════════════════════════════════
+     BLEMISH PATCHES TAB
+     ════════════════════════════════════════════════════ -->
+<div id="tab-blemish" class="page">
+
+  <div class="alert good">
+    <span style="font-size:16px;flex-shrink:0;">🚀</span>
+    <span><strong>LIVE — Launched July 2026, strongest debut in the portfolio:</strong> 6 Blemish Patch SKUs (PBJ0027–PBJ0032) generated 366 sessions, 127 units, and $1,191.50 in their first full month at 34.7% blended conversion — well above every other product line. August 1–14 shows the same conversion collapse hitting the rest of the brand (13 units from 290 sessions, 4.5% conv%). PBJ0027 (Cleanspot Treatment) is the outlier — 3 sessions and 0 units in July while its Healing sibling (PBJ0028) sold 30 units.</span>
+  </div>
+
+  <!-- Pulse -->
+  <div class="sec">
+    <div class="sec-title">Blemish Patches — Pulse <span class="badge bg-green">Jul 2026 (Full) · Aug 1–14 (Partial)</span></div>
+    <div class="pulse">
+      <div class="pulse-item g"><div class="p-lbl">Jul Sessions</div><div class="p-val">366</div><div class="p-note">6 SKUs, first full month live</div></div>
+      <div class="pulse-item g"><div class="p-lbl">Jul Units</div><div class="p-val">127</div><div class="p-note">$1,191.50 revenue</div></div>
+      <div class="pulse-item g"><div class="p-lbl">Jul Conv%</div><div class="p-val">34.7%</div><div class="p-note">Best in the portfolio by far</div></div>
+      <div class="pulse-item b"><div class="p-lbl">Aug 1–14 Sessions</div><div class="p-val">290</div><div class="p-note">Traffic holding up</div></div>
+      <div class="pulse-item b"><div class="p-lbl">Aug 1–14 Conv%</div><div class="p-val">4.5%</div><div class="p-note">13 units, $123.50 — sharp drop</div></div>
+      <div class="pulse-item w"><div class="p-lbl">Price Point</div><div class="p-val">$9.00</div><div class="p-note">36 count · $0.25/patch</div></div>
+    </div>
+  </div>
+
+  <!-- Per-SKU July/August performance -->
+  <div class="sec">
+    <div class="sec-title">Blemish Patches — SKU-Level Performance</div>
+    <div style="overflow-x:auto;"><table class="data">
+      <thead><tr><th>SKU</th><th>Product</th><th>Jul Sessions</th><th>Jul Units</th><th>Jul Conv%</th><th>Jul Revenue</th><th>Aug 1–14 Sessions</th><th>Aug 1–14 Units</th><th>Aug 1–14 Conv%</th></tr></thead>
+      <tbody>
+        <tr style="background:var(--rose-light);"><td style="font-family:var(--font-mono);font-size:11px;">PBJ0027</td><td><strong>Cleanspot Treatment</strong></td><td>3</td><td>0</td><td>0%</td><td>$0.00</td><td>8</td><td>0</td><td>0%</td></tr>
+        <tr class="our"><td style="font-family:var(--font-mono);font-size:11px;">PBJ0028</td><td><strong>Cleanspot Healing</strong></td><td>57</td><td>30</td><td><span class="pill pill-g">52.63%</span></td><td>$270.00</td><td>23</td><td>0</td><td>0%</td></tr>
+        <tr class="our"><td style="font-family:var(--font-mono);font-size:11px;">PBJ0029</td><td><strong>Donut Spot Cover</strong></td><td>70</td><td>28</td><td><span class="pill pill-g">40.00%</span></td><td>$266.00</td><td>73</td><td>2</td><td>2.74%</td></tr>
+        <tr class="our"><td style="font-family:var(--font-mono);font-size:11px;">PBJ0030</td><td><strong>Fruity Spot Cover</strong></td><td>102</td><td>29</td><td><span class="pill pill-g">28.43%</span></td><td>$275.50</td><td>64</td><td>3</td><td>4.69%</td></tr>
+        <tr class="our"><td style="font-family:var(--font-mono);font-size:11px;">PBJ0031</td><td><strong>CatchPatch Spot Cover</strong></td><td>85</td><td>28</td><td><span class="pill pill-g">32.94%</span></td><td>$266.00</td><td>51</td><td>3</td><td>5.88%</td></tr>
+        <tr class="our"><td style="font-family:var(--font-mono);font-size:11px;">PBJ0032</td><td><strong>PawPatch Spot Cover</strong></td><td>49</td><td>12</td><td><span class="pill pill-g">24.49%</span></td><td>$114.00</td><td>71</td><td>5</td><td>7.04%</td></tr>
+      </tbody>
+    </table></div>
+    <div style="margin-top:10px;font-size:12.5px;color:var(--ink3);line-height:1.6;">
+      <strong style="color:var(--rose);">PBJ0027 needs a listing check</strong> — it's the only SKU that never got traffic or sales in July despite being the same format as PBJ0028, which was the second-best performer in the line. Check its images, price, and whether it's actually buyable.<br><br>
+      The novelty designs (Donut, CatchPatch, Fruity) drove the bulk of July revenue and are holding onto more August traffic than Cleanspot — but every SKU's conversion dropped by 5–10x between July and August, consistent with the account-wide pattern on the Organic and Overview tabs.
+    </div>
+  </div>
+
+  <!-- SKU Variations -->
+  <div class="sec">
+    <div class="sec-title">Blemish Patch SKUs — Design Variations</div>
+    <div style="overflow-x:auto;"><table class="data">
+      <thead>
+        <tr><th>#</th><th>SKU</th><th>Product Name</th><th>Design Type</th><th>Count</th><th>Price</th><th>$/patch</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr class="our"><td>1</td><td style="font-family:var(--font-mono);font-size:11px;">PBJ0027</td><td><strong>36PCS Cleanspot Acne Patch Treatment</strong></td><td>Standard Round</td><td>36</td><td>$9.00</td><td>$0.25</td><td><span class="badge bg-red">⚠ 0 units Jul — check listing</span></td></tr>
+        <tr class="our"><td>2</td><td style="font-family:var(--font-mono);font-size:11px;">PBJ0028</td><td><strong>36PCS Cleanspot Acne Patch Healing</strong></td><td>Standard Round</td><td>36</td><td>$9.00</td><td>$0.25</td><td><span class="badge bg-green">Live · 30u Jul</span></td></tr>
+        <tr class="our"><td>3</td><td style="font-family:var(--font-mono);font-size:11px;">PBJ0029</td><td><strong>36pcs Donut Spot Cover</strong></td><td>Novelty — Donut Shape</td><td>36</td><td>$9.00</td><td>$0.25</td><td><span class="badge bg-green">Live · 28u Jul</span></td></tr>
+        <tr class="our"><td>4</td><td style="font-family:var(--font-mono);font-size:11px;">PBJ0030</td><td><strong>36pcs Fruity Spot Cover</strong></td><td>Novelty — Fruit Design</td><td>36</td><td>$9.00</td><td>$0.25</td><td><span class="badge bg-green">Live · 29u Jul</span></td></tr>
+        <tr class="our"><td>5</td><td style="font-family:var(--font-mono);font-size:11px;">PBJ0031</td><td><strong>36pcs CatchPatch Spot Cover</strong></td><td>Novelty — Catcher Design</td><td>36</td><td>$9.00</td><td>$0.25</td><td><span class="badge bg-green">Live · 28u Jul</span></td></tr>
+        <tr class="our"><td>6</td><td style="font-family:var(--font-mono);font-size:11px;">PBJ0032</td><td><strong>36pcs PawPatch Spot Cover</strong></td><td>Novelty — Paw Print</td><td>36</td><td>$9.00</td><td>$0.25</td><td><span class="badge bg-green">Live · 12u Jul</span></td></tr>
+      </tbody>
+    </table></div>
+    <div style="margin-top:10px;font-size:12px;color:var(--ink3);">
+      💡 <strong>Positioning note:</strong> Cleanspot variants (PBJ0027–0028) compete on function — "treatment" and "healing." The novelty designs (Donut, Fruity, Paw, CatchPatch) target the gifting, Gen Z, and social-shareable segment directly competing with Starface Hydro-Star and Jo Dominic heart patches.
+    </div>
+  </div>
+
+  <!-- Current Competitors -->
+  <div class="sec">
+    <div class="sec-title">Blemish Patches — Current Competitors <span class="badge bg-gray">Helium 10 · Under 200 Reviews</span></div>
+    <div style="overflow-x:auto;"><table class="data">
+      <thead><tr><th>ASIN</th><th>Brand / Product</th><th>Price</th><th>Count</th><th>$/patch</th><th>Reviews</th><th>Est. Mo. Sales</th><th>Key Edge</th><th>Threat</th></tr></thead>
+      <tbody>
+        <tr class="our"><td style="font-family:var(--font-mono);font-size:11px;">—</td><td><strong>PB &amp; JAY Cleanspot / Spot Cover (6 SKUs)</strong></td><td>$9.00</td><td>36</td><td>$0.25</td><td>0 (new, no reviews yet)</td><td>127 units Jul / 13 units Aug 1–14</td><td>Design variety, novelty shapes, K-beauty brand</td><td>—</td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0DQ3T6F9J</td><td>OLIVE YOUNG Care Plus Spot Patch</td><td>$26.99</td><td>~180</td><td>$0.15</td><td>122 · 4.5★</td><td>~4,876/mo</td><td>Established K-beauty brand, Korean pharmacy credibility</td><td><span class="threat-h">HIGH</span></td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0FKTQXVSJ</td><td>LivaClean 240 Star + 330 Round Bundle</td><td>$15.99</td><td>570</td><td>$0.03</td><td>32 · 4.7★</td><td>~12,380/mo</td><td>Extreme value — 570 patches at $15.99; volume play</td><td><span class="threat-h">HIGH</span></td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0B5PNP9M6</td><td>COSRX Master Patch Intensive (36ct)</td><td>$11.03</td><td>36</td><td>$0.31</td><td>195 · 4.8★</td><td>~3,824/mo</td><td>COSRX brand authority, oval shape differentiator</td><td><span class="threat-h">HIGH</span></td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0GGGJJQZX</td><td>ma:nyo Glutathione Dark Spot Serum Patch</td><td>$15.89</td><td>—</td><td>—</td><td>122 · 4.3★</td><td>~5,872/mo</td><td>Premium dark spot serum positioning; different use case</td><td><span class="threat-m">MED</span></td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0CXMDV7Y7</td><td>PatchRx Large Pimple Patches (20 Pack)</td><td>$8.99</td><td>20</td><td>$0.45</td><td>149 · 4.5★</td><td>~2,705/mo</td><td>Large size format; similar price to PBJ</td><td><span class="threat-m">MED</span></td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0FHKT8GG7</td><td>Jo Dominic MAGIX Heart Patches</td><td>$5.99</td><td>—</td><td>—</td><td>73 · 4.7★</td><td>~4,411/mo</td><td>Novelty heart/flag design — directly competes with PBJ novelty SKUs</td><td><span class="threat-m">MED</span></td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0DYHQXGPC</td><td>EasyDerm Multi-Step Pimple Patch Set</td><td>$46.00</td><td>~4 types</td><td>—</td><td>41 · 4.2★</td><td>~1,937/mo</td><td>Premium 4-type Korean system; different price tier</td><td><span class="threat-l">LOW</span></td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0H4ZZQJ1B</td><td>TLOPA Curalona 2-in-1 Microdarts</td><td>$27.99</td><td>—</td><td>—</td><td>1 · 5.0★</td><td>~2,137/mo</td><td>New microdart format; 2026 launch; premium positioning</td><td><span class="threat-l">LOW</span></td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0H2VKDW27</td><td>ZATKTK Salicylic Acid Patches</td><td>$6.99</td><td>~36</td><td>$0.19</td><td>53 · 4.4★</td><td>~2,320/mo</td><td>Active ingredient (salicylic acid) differentiation</td><td><span class="threat-l">LOW</span></td></tr>
+      </tbody>
+    </table></div>
+    <div style="margin-top:10px;font-size:12px;color:var(--ink3);">📊 Source: Helium 10 Black Box · Pore Cleansing Strips category · &lt;200 reviews filter · sorted by revenue · July 2026</div>
+  </div>
+
+  <!-- Category Leaders -->
+  <div class="sec">
+    <div class="sec-title">Blemish Patches — Category Leaders <span class="badge bg-gray">Helium 10 · 1,000+ Reviews</span></div>
+    <div style="overflow-x:auto;"><table class="data">
+      <thead><tr><th>ASIN</th><th>Brand</th><th>Price</th><th>Count</th><th>$/patch</th><th>Reviews</th><th>Est. Mo. Revenue</th><th>Why They Win</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B074PVTPBW</td><td>Mighty Patch Original (Hero Cosmetics)</td><td>$12.99</td><td>36</td><td>$0.36</td><td>184,257 · 4.6★</td><td>~$3,962,718/mo</td><td>Category-defining product. #6 BSR in Beauty. Daytime invisible formula + unmatched social proof. 235K+ units/mo. The Neutrogena of this category.</td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B07KJS13PK</td><td>Mighty Patch™ Invisible+ (Hero Cosmetics)</td><td>$14.39</td><td>—</td><td>—</td><td>13,775 · 4.7★</td><td>~$711,453/mo</td><td>Daytime clear formula extension. 4.7★ on 13K reviews. Hero Cosmetics brand ecosystem drives cross-sell.</td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B07G1ZY12D</td><td>Rael Miracle Invisible Spot Cover</td><td>$13.96</td><td>—</td><td>—</td><td>74,182 · 4.5★</td><td>~$987,511/mo</td><td>#2 in category. Clean beauty brand credibility. Variety of sizes. 57K units/mo. Strong repeat purchase via Subscribe &amp; Save.</td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0GR1LRVHV</td><td>Starface Hydro-Star® Black Refills</td><td>$11.01</td><td>—</td><td>—</td><td>4,360 · 4.7★</td><td>~$449,383/mo</td><td>Star shape — brand built entirely on novelty patch design. 25K units/mo. Most direct competitor to PBJ novelty SKUs (Donut, Paw, Fruity).</td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0DTKFZ662</td><td>TKTK 443ct Bulk Pimple Patches</td><td>$9.99</td><td>443</td><td>$0.02</td><td>2,997 · 4.5★</td><td>~$205,196/mo</td><td>Ultra-bulk value play. 443 patches at $9.99 captures the "stock up" buyer. Directly undercuts per-patch cost.</td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0B75P7HQL</td><td>ZitSticka Hyperfade Microdart Patch</td><td>$7.50</td><td>—</td><td>—</td><td>7,549 · 4.3★</td><td>~$204,313/mo</td><td>Post-blemish dark spot positioning — adjacent market. Microdart tech is premium differentiator.</td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0CNRQ44LS</td><td>PatchRx 500ct Hydrocolloid Patches</td><td>$29.99</td><td>500</td><td>$0.06</td><td>25,995 · 4.4★</td><td>~$186,703/mo</td><td>Largest volume offer on Amazon. 16K units/mo. Value bulk buyer segment.</td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B08R7WN5RS</td><td>AVARELLE Acne Cover Patch w/ Tea Tree</td><td>$7.50</td><td>—</td><td>—</td><td>75,864 · 4.3★</td><td>~$158,727/mo</td><td>Tea Tree + Calendula active ingredient story. 75K reviews — massive social proof. Clean beauty positioning.</td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0D6WCFLSJ</td><td>LivaClean 330ct Salicylic + Tea Tree</td><td>$6.99</td><td>330</td><td>$0.02</td><td>3,094 · 4.6★</td><td>~$122,133/mo</td><td>Active ingredient stack (salicylic, tea tree, calendula) + volume = best value with skin benefits. $0.02/patch.</td></tr>
+        <tr><td style="font-family:var(--font-mono);font-size:11px;">B0BCRWQY6C</td><td>Mario Badescu Drying Duo (Spot Treatment)</td><td>$26.00</td><td>—</td><td>—</td><td>36,422 · 4.5★</td><td>~$279,732/mo</td><td>Premium brand halo. Adjacent acne treatment — not pure patches but captures same shopper intent.</td></tr>
+      </tbody>
+    </table></div>
+    <div style="margin-top:10px;font-size:12px;color:var(--ink3);">📊 Source: Helium 10 Black Box · Pore Cleansing Strips category · 1,000+ reviews filter · sorted by revenue · July 2026</div>
+  </div>
+
+  <!-- Competitive Intelligence -->
+  <div class="sec">
+    <div class="sec-title">Competitive Intelligence &amp; Launch Strategy</div>
+    <div class="log-finding" style="margin-bottom:10px;">
+      <div class="log-finding-title">🎯 Market Reality: Mighty Patch's Moat is Unassailable — Differentiation is the Only Path</div>
+      Mighty Patch owns this category with 184K+ reviews, $3.96M/mo, and #6 BSR in all of Beauty. Competing head-on on standard round patches is a losing strategy. PBJ's advantage is the novelty design portfolio: Donut, Fruity, Paw, CatchPatch shapes directly compete with Starface Hydro-Star, which built a $449K/mo brand solely on star-shaped patches. <strong>The play is design + K-beauty credentials + $0.25/patch value.</strong>
+    </div>
+    <div class="log-finding" style="margin-bottom:10px;">
+      <div class="log-finding-title">💰 Pricing Analysis: $9.00 / 36ct is Competitive in the Mid-Tier</div>
+      At $0.25/patch, PBJ sits between bulk commodity players (TKTK at $0.02/patch, LivaClean at $0.03/patch) and premium brands (COSRX at $0.31/patch, Mighty Patch at $0.36/patch). The $9 price point is defensible if product quality and design differentiation hold. Avoid a price war with bulk plays — compete on the novelty and K-beauty angle instead.
+    </div>
+    <div class="log-finding" style="margin-bottom:10px;">
+      <div class="log-finding-title">📦 PPC Update — "Pimple Patches" Is the Top Spend Line, Efficiency Is Slipping</div>
+      "Pimple patches" is the single largest search term in the account: $85.53 spend for $85.50 in sales in July (breakeven, ~100% ACOS), but only $19.00 in sales against $40.97 spend in the first half of August (~215% ACOS). Other blemish terms converting in July included "acne patch," "hydrocolloid patch," and "zit stickers" ($9.50 each on ~$1.23 spend — excellent ROAS on the exact-match long tail). Avoid broad "pore strips" — that intent skews toward Biore nose strips. Keep the exact-match long tail running; review bids/placements on "pimple patches" specifically before pulling back blemish PPC broadly.
+    </div>
+    <div class="log-finding" style="margin-bottom:10px;">
+      <div class="log-finding-title">✅ Listing Copy Live — Hydrocolloid-Led, No Confirmed Active-Ingredient Claims</div>
+      Listing copy launched for all 6 SKUs without specific active-ingredient claims (no salicylic acid, tea tree, etc.), since INCI/actives were never confirmed against the reference ASIN (B0F7S5TTZ2). Copy leads with hydrocolloid material and format/shape differentiation instead. July's 34.7% conversion suggests this positioning worked — if the manufacturer confirms actual actives, there may be room to add a compliant ingredient claim and lift conversion further.
+    </div>
+    <div class="log-finding" style="margin-bottom:10px;">
+      <div class="log-finding-title">🔍 PBJ0027 (Cleanspot Treatment) — Investigate Before Anything Else</div>
+      PBJ0028 (Healing) sold 30 units in July at 52.6% conversion. PBJ0027 (Treatment) — the same format, same price, same launch date — had 3 sessions and 0 units. That's not a demand or positioning problem, it's almost certainly a listing-health issue (suppressed listing, missing image, price glitch, or inventory showing unavailable). Check Seller Central status on this ASIN first.
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Opportunities + Priority Actions <span class="badge bg-amber">AI-Generated</span></div>
+    <div id="opp-out-blemish"></div>
+    <div id="opp-status-blemish" class="smsg"></div>
   </div>
   <div class="sec">
-    <div class="sec-title">All Organic Rankings — All Products</div>
+    <div class="sec-title">Update Data + Regenerate</div>
+    <div class="ug">
+      <div><div class="ulbl">BSR Update</div><input type="text" id="upd-bsr-blemish" placeholder="#XXX Pore Cleansing Strips" style="min-height:auto;" /></div>
+      <div><div class="ulbl">Business Metrics</div><textarea id="upd-biz-blemish" rows="3" placeholder="Sessions: 290&#10;Units: 13&#10;Conv%: 4.5%"></textarea></div>
+      <div><div class="ulbl">Keyword Updates</div><textarea id="upd-kw-blemish" rows="3" placeholder="pimple patches, rank, vol"></textarea></div>
+      <div><div class="ulbl">New Reviews</div><textarea id="upd-rev-blemish" rows="3" placeholder="Paste new review text…"></textarea></div>
+    </div>
+    <button class="btn" onclick="runAnalysis('blemish')">Analyze + Regenerate</button>
+    <div class="ts" id="ts-blemish"></div>
+  </div>
+
+</div>
+<!-- END BLEMISH PATCHES TAB -->
+
+<div id="tab-organic" class="page">
+  <div class="alert warn">
+    <span style="font-size:16px;flex-shrink:0;">🚨</span>
+    <span><strong>Organic rankings collapsed between Jul 27 and Aug 10.</strong> On Jul 16 and Jul 27, the brand had built ~30 real organic rankings across masks and wipes — including "korean makeup wipes" at #8, "korean face wipes" at #20–21, "avocado face mask" at #33–39, and several Spanish-language and rice-water terms in the top 60. By the Aug 10 snapshot, only <strong>one</strong> of ~156 tracked keywords still ranks at all ("gentle makeup remover wipes" #212, PBJ0001). This is the single biggest change in the account and should be diagnosed before anything else — see the Overview tab for the correlated traffic and PPC collapse.</span>
+  </div>
+  <div class="sec">
+    <div class="sec-title">Organic Ranking Trend — Jul 16 → Jul 27 → Aug 10</div>
     <table class="data">
-      <thead><tr><th>Product</th><th>Keyword</th><th>Vol/mo</th><th>Organic Rank</th><th>ABA Conv%</th><th>Competing</th><th>Notes</th></tr></thead>
+      <thead><tr><th>Product</th><th>Keyword</th><th>Jul 16 Rank</th><th>Jul 27 Rank</th><th>Aug 10 Rank</th><th>Vol/mo</th></tr></thead>
       <tbody>
-        <tr class="our"><td><strong>Hydrogel Mask</strong></td><td>glass skin face mask</td><td>1,848</td><td><span class="pill pill-g">#199</span></td><td>41.5%</td><td>&gt;2,000</td><td>Best organic rank in portfolio — amplify with PPC</td></tr>
-        <tr class="our"><td><strong>Hydrogel Mask</strong></td><td>mascarilla de colageno</td><td>2,484</td><td><span class="pill pill-a">#284</span></td><td>68.2%</td><td>602</td><td>Spanish · 68.2% ABA · 602 competing — high opportunity</td></tr>
-        <tr class="our"><td><strong>Hydrogel Mask</strong></td><td>korean collagen hydrogel mask</td><td>—</td><td><span class="pill pill-a">#235</span></td><td>0%</td><td>&gt;1,000</td><td>Specific format term — near page 2</td></tr>
-        <tr><td colspan="7" style="text-align:center;color:var(--ink3);font-style:italic;padding:16px;">All other 153 tracked keywords: Organic Rank &gt;306 (page 4+)</td></tr>
+        <tr class="our"><td><strong>Wipes — Rose (PBJ0012)</strong></td><td>korean makeup wipes</td><td><span class="pill pill-g">#19</span></td><td><span class="pill pill-g">#25</span></td><td><span class="pill pill-r">&gt;306</span></td><td>484</td></tr>
+        <tr class="our"><td><strong>Wipes — Rose (PBJ0012)</strong></td><td>korean face wipes</td><td><span class="pill pill-g">#20</span></td><td><span class="pill pill-g">#21</span></td><td><span class="pill pill-r">&gt;306</span></td><td>650</td></tr>
+        <tr class="our"><td><strong>Wipes — Vit C/Lemon (PBJ0008)</strong></td><td>korean makeup wipes</td><td>—</td><td><span class="pill pill-g">#8</span></td><td><span class="pill pill-r">&gt;306</span></td><td>502</td></tr>
+        <tr class="our"><td><strong>Masks — Avocado (PBJ0013)</strong></td><td>avocado face mask</td><td><span class="pill pill-g">#33</span></td><td><span class="pill pill-g">#39</span></td><td><span class="pill pill-r">&gt;306</span></td><td>555–630</td></tr>
+        <tr class="our"><td><strong>Wipes — Rose (PBJ0012)</strong></td><td>rice water face wipes</td><td><span class="pill pill-a">#57</span></td><td><span class="pill pill-a">#58</span></td><td><span class="pill pill-r">&gt;306</span></td><td>608–649</td></tr>
+        <tr class="our"><td><strong>Masks — 12-pack (PBJ0025)</strong></td><td>face mask set</td><td><span class="pill pill-a">#125</span></td><td><span class="pill pill-a">#140</span></td><td><span class="pill pill-r">&gt;306</span></td><td>1,827–1,895</td></tr>
+        <tr class="our"><td><strong>Masks — Rose (PBJ0024) / Green Tea (PBJ0017)</strong></td><td>mascarilla de colageno</td><td>#268</td><td>#238</td><td><span class="pill pill-r">&gt;306</span></td><td>3,057–3,170</td></tr>
+        <tr class="our"><td><strong>Masks — 12-pack (PBJ0025)</strong></td><td>vitamin c face mask</td><td>#297</td><td>#286</td><td><span class="pill pill-r">&gt;306</span></td><td>1,129–1,175</td></tr>
+        <tr class="our"><td><strong>Wipes — Apricot (PBJ0001)</strong></td><td>gentle makeup remover wipes</td><td>—</td><td>#213</td><td><span class="pill pill-g">#212</span></td><td>647–649</td></tr>
+        <tr class="our"><td><strong>Hydrogel Mask</strong></td><td>glass skin face mask</td><td><span class="pill pill-r">&gt;306*</span></td><td><span class="pill pill-r">&gt;306*</span></td><td>—</td><td>1,848</td></tr>
+        <tr class="our"><td><strong>Hydrogel Mask</strong></td><td>mascarilla de colageno</td><td><span class="pill pill-r">&gt;306*</span></td><td><span class="pill pill-r">&gt;306*</span></td><td>—</td><td>2,484</td></tr>
       </tbody>
     </table>
+    <div style="margin-top:10px;font-size:12px;color:var(--ink3);">*Hydrogel's previously-reported ranks (#199, #235, #284) had already fallen to &gt;306 by the Jul 16 snapshot in this data pull — meaning that decline predates the wipes/masks collapse and may be a separate, earlier issue. No Aug 10 hydrogel keyword rows were returned in this pull.</div>
   </div>
   <div class="sec">
     <div class="sec-title">Fastest Path to Page 1 — by Product</div>
@@ -2524,11 +2708,11 @@ table.data tr:hover td{background:var(--bg);}
       <div class="brewrite-active"><span class="bullet-num">4</span><div><strong>PERFECT GLASS-SKIN GIFTS FOR WOMEN — 5 HYDROGEL MASKS PER PACK:</strong> Beautifully packaged and irresistibly refreshing, this glass skin face mask 5-pack makes the ultimate gifts for women — from spa nights to daily self-care routines. Each cushiony hydrogel mask delivers a refreshing, K-beauty glass-skin experience. An elevated gifting option at $4/mask.</div></div>
 
       <div class="blbl">Bullet 5</div>
-      <div class="brewrite-active"><span class="bullet-num">5</span><div><strong>MADE IN KOREA · PARABEN-FREE · VEGAN · CRUELTY-FREE:</strong> PB &amp; Jay Hydrogel Face Mask is formulated in Korea with a clean, conscious ingredient profile: paraben-free, sulfate-free, vegan, and cruelty-free. 4.6★ / 29 reviews. Fits all face shapes. Compatible with all skin types — including sensitive. The glass-skin hydrogel mask Korean beauty enthusiasts are discovering.</div></div>
+      <div class="brewrite-active"><span class="bullet-num">5</span><div><strong>MADE IN KOREA · PARABEN-FREE · VEGAN · CRUELTY-FREE:</strong> PB &amp; Jay Hydrogel Face Mask is formulated in Korea with a clean, conscious ingredient profile: paraben-free, sulfate-free, vegan, and cruelty-free. Fits all face shapes. Compatible with all skin types — including sensitive. The glass-skin hydrogel mask Korean beauty enthusiasts are discovering.</div></div>
 
     <div class="audit-sec">
       <div class="as-title">Active Product Description</div>
-      <div class="desc-active"><strong>Continuous Deep Hydration for Glass-Skin Glow — PB &amp; JAY Hydrogel Face Mask</strong><br>The PB &amp; JAY Hydrogel Face Mask delivers an intensive K-beauty glass-skin treatment using a kappa carrageenan + glucomannan hydrogel base that maintains a continuous reservoir of hydration throughout the entire wear period. Unlike standard sheet masks that dry out, the hydrogel format delivers actives continuously — so Niacinamide, Peptides, and botanical extracts absorb throughout every minute of wear.<br><br><strong>Powered by Korean Skincare Innovation</strong><br>This Korean hydrogel mask is formulated with Niacinamide, Peptides, Allantoin (soothing), Panthenol (barrier support), Lavender Extract, Honeysuckle Extract, Broccoli Sprout Extract, and Camellia Extract — all in a hydrogel base that hugs the skin and seals in actives for maximum absorption. No coloring, no fragrance, formulated for all skin types.<br><br><strong>Flexible Treatment — 50–60 Minutes or Wear Overnight</strong><br>Use for 50–60 minutes as an intensive treatment session, or wear overnight for 8 hours of deep continuous hydration while you sleep. The cushiony hydrogel sheet conforms to all face shapes. No rinsing needed. Ideal for spa nights, pre-event prep, or as a weekly overnight treatment.<br><br><strong>K-Beauty Made Clean — 5-Pack Gift Set</strong><br>Crafted with care in Korea, PB &amp; JAY Hydrogel Face Masks are vegan, paraben-free, and sulfate-free. Five full masks per pack — an elevated gifting option at $4.00 per mask. 4.6★ / 29 reviews. Compatible with all skin types, including sensitive.</div>
+      <div class="desc-active"><strong>Continuous Deep Hydration for Glass-Skin Glow — PB &amp; JAY Hydrogel Face Mask</strong><br>The PB &amp; JAY Hydrogel Face Mask delivers an intensive K-beauty glass-skin treatment using a kappa carrageenan + glucomannan hydrogel base that maintains a continuous reservoir of hydration throughout the entire wear period. Unlike standard sheet masks that dry out, the hydrogel format delivers actives continuously — so Niacinamide, Peptides, and botanical extracts absorb throughout every minute of wear.<br><br><strong>Powered by Korean Skincare Innovation</strong><br>This Korean hydrogel mask is formulated with Niacinamide, Peptides, Allantoin (soothing), Panthenol (barrier support), Lavender Extract, Honeysuckle Extract, Broccoli Sprout Extract, and Camellia Extract — all in a hydrogel base that hugs the skin and seals in actives for maximum absorption. No coloring, no fragrance, formulated for all skin types.<br><br><strong>Flexible Treatment — 50–60 Minutes or Wear Overnight</strong><br>Use for 50–60 minutes as an intensive treatment session, or wear overnight for 8 hours of deep continuous hydration while you sleep. The cushiony hydrogel sheet conforms to all face shapes. No rinsing needed. Ideal for spa nights, pre-event prep, or as a weekly overnight treatment.<br><br><strong>K-Beauty Made Clean — 5-Pack</strong><br>Crafted with care in Korea, PB &amp; JAY Hydrogel Face Masks are vegan, paraben-free, and sulfate-free — providing pure, conscious skincare for all skin types, including sensitive. Five full masks per pack, each individually sealed for freshness.</div>
     </div>
     <div class="audit-sec">
       <div class="as-title">Backend Keywords — Spaces Only</div>
@@ -2663,62 +2847,80 @@ table.data tr:hover td{background:var(--bg);}
 
 <script>
 const CTX = `BRAND: PB & Jay (Pureunbi Corp)
+
+⚠ TOP-LINE ALERT (as of Aug 10, 2026): Organic rankings collapsed brand-wide between Jul 27 and Aug 10 — ~30 real rankings (Korean makeup wipes #8, avocado face mask #33, rice water wipes #57, mascarilla de colageno #234-268, face mask set #125-140) fell to >306, leaving only 1 ranked keyword in the whole account. This correlates with wipes sessions collapsing (8 of 12 SKUs at 0 sessions in Jul), blemish patch conversion dropping from 34.7% (Jul) to 4.5% (Aug), and PPC ACOS rising from 85% to ~260%. No spike in order cancellations, so this does not look like a fulfillment/returns issue — likely a listing suppression, inventory, or pricing change. Treat this as the root cause behind most other findings below rather than four separate line-item problems.
+
 PRODUCT LINES:
 1. Face Masks (Purenature) — 12 scent variants + 1 twelve-pack variety set
    - Single masks: $6.00 · 1 count · Anchor ASIN B0G547Y4K7 (Avocado)
    - 12-Pack variety: $14.00 · ASIN B0G549VXFH · PBJ0025
-   - BSR: #793 Facial Masks · Rating: 4.6★ (139 reviews)
-   - May: Sessions 2,095 (shared across variation family) · Units 19 · Conv% 0.9%
-   - Jun 1-15: Sessions 184 · Units 2 · Conv% 1.1% · Revenue $12 — alternate seller still active
-   - NOTE: All 13 SKUs share sessions. Alternate seller status unknown as of Jun 15 (mask line still showing minimal conversions). Monitor weekly.
+   - BSR: #793 Facial Masks (last known) · Rating: 4.6★ (139 reviews)
+   - Jul 2026 (full): Sessions 618 (shared across variation family) · Units 5 · Conv% 0.8% · Revenue $30
+   - Aug 1-15 (partial): Sessions 157 · Units 4 · Conv% 2.5% · Revenue $24
+   - NOTE: Charcoal-equivalent in masks (Avocado, top ranker at #33 on Jul 16/27) lost its organic rank entirely by Aug 10. Alternate-seller Buy Box issue from June may still be a factor — status not reconfirmed in latest reports.
    - 12 variants: Avocado, Honey, Cucumber, Pomegranate, Green Tea/Tea Tree, Charcoal, Collagen, Vitamin C, Aloe, Retinol, Acai, Rose
    - All share: Ceramide NP + Sodium Hyaluronate base
-   - 0 organic rankings — all 57 keywords >306
+   - Organic rankings: had ~8 real ranks (avocado face mask #33-39, mascarilla de colageno #238-268, face mask set #125-140, vitamin c face mask #286-297) as of Jul 16/27 — ALL fell to >306 by Aug 10.
 
 2. Makeup Wipes (Cleancare) — 12 scent variants, no variety pack
    - $7.00 · 30 count · Tracker ASIN B0G547LV5T
-   - BSR: #125 Makeup Cleansing Wipes · Rating: 4.4★ (27 reviews)
-   - May: Sessions 632 · Units 57 · Conv% 9.0% · Revenue $399
-   - Jun 1-15: Sessions 218 · Units 31 · Conv% 14.2% · Revenue $217 — Charcoal #1 (12 units, 34% conv)
-   - Top performers: Charcoal (16 units, 13.45%), Pomegranate (7 units, 20%), Collagen (8 units, 12.1%)
-   - Buy Box issues: Vit C 23.64%, Rose 26.44%
+   - BSR: #125 Makeup Cleansing Wipes (last known) · Rating: 4.4★ (27 reviews)
+   - Jul 2026 (full): Sessions 671 · Units 52 · Conv% 7.8% · Revenue $364
+   - Aug 1-15 (partial): Sessions 129 · Units 2 · Conv% 1.6% · Revenue $14 — 8 of 12 SKUs at ZERO sessions
+   - CRITICAL: Charcoal (PBJ0006), the former #1 seller (16 units in May), had ZERO sessions for the entire month of July — predates the broader August collapse. Check this SKU's listing status first.
+   - Jul top performers: Collagen (14 units, 27.45% conv), Green Tea (13 units, 26.53%), Coconut (9 units, 10.47%)
+   - Buy Box issues persist: Vit C (148 sessions, 0 units) and Rose (153 sessions, 0 units) — likely still suppressed
    - All share: Sodium Hyaluronate + Licorice Root Extract base
    - Clean: paraben/sulfate/phthalate/alcohol-free, cruelty-free
-   - 0 organic rankings — all 54 keywords >306
+   - Organic rankings: had ~6 real ranks (korean makeup wipes #8-25, korean face wipes #20-21, rice water face wipes #57-58) as of Jul 16/27 — ALL fell to >306 by Aug 10 except "gentle makeup remover wipes" (#212-213, PBJ0001), the only surviving rank in the account.
 
 3. Hydrogel Face Mask — single SKU
    - $20.00 · 5-pack · ASIN B0G3YHD7LC · $4/mask
-   - BSR: #9,456 Facial Masks · Rating: 4.6★ (29 reviews)
-   - May: Sessions 27 · Units 0 · Revenue $0 ← CRITICAL ISSUE
+   - BSR: #9,456 Facial Masks (last known) · Rating: 4.6★ (29 reviews)
+   - Jun & Jul 2026: Sessions ~16-26 · Units 0 · Revenue $0 each month
+   - Aug 1-15 (partial): Sessions 8 · Units 4 · Revenue $80 · Conv% 50% ← FIRST REAL SALES, reversal after months at zero
    - Formula: Niacinamide + Peptides + Allantoin + Panthenol + Lavender + Honeysuckle + Broccoli Sprout
-   - Only 3 organic ranks: "glass skin face mask" #199, "mascarilla de colageno" #284, "korean collagen hydrogel mask" #235
+   - Organic ranks: previously reported ranks (#199, #235, #284) were already gone (>306) as of the Jul 16 snapshot — this decline predates and is separate from the wipes/masks collapse.
    - Well-priced vs BIODANCE ($4.75/mask) and COSRX ($5/mask)
 
+4. Blemish Patches (Cleanspot + novelty designs) — 6 SKUs, launched July 2026
+   - $9.00 · 36 count · $0.25/patch · PBJ0027-PBJ0032
+   - Jul 2026 (full, first month live): Sessions 366 · Units 127 · Conv% 34.7% · Revenue $1,191.50 — strongest launch in the portfolio
+   - Aug 1-15 (partial): Sessions 290 · Units 13 · Conv% 4.5% · Revenue $123.50 — same collapse pattern as other lines
+   - Per-SKU Jul: PBJ0028 Healing 30u/52.6%, PBJ0029 Donut 28u/40.0%, PBJ0030 Fruity 29u/28.4%, PBJ0031 CatchPatch 28u/32.9%, PBJ0032 PawPatch 12u/24.5%
+   - CRITICAL: PBJ0027 (Cleanspot Treatment) had only 3 sessions and 0 units in July despite being the same format as PBJ0028 (which sold 30 units) — likely a listing-health problem specific to this ASIN, not a demand issue.
+   - No confirmed active ingredients (INCI never verified against reference ASIN B0F7S5TTZ2) — listing copy uses hydrocolloid/format claims only, no salicylic acid/tea tree claims.
+   - Competes against Mighty Patch (~$3.96M/mo, 184K reviews) and Rael (~$988K/mo) — PBJ's differentiation is novelty shape design + $0.25/patch value.
+
 KEY INSIGHTS:
+- The Aug 10 organic ranking collapse is the dominant fact for the whole account right now — nearly every finding below should be read in that context.
 - Spanish-language terms have disproportionately high ABA% with low competition across all lines
-- "mascarilla de colageno" — 68.2% ABA, 602 competing — highest-ABA term in face masks
-- "rice water face wipes" — 95% ABA, 193 competing — highest-ABA term in wipes
-- "quia face mask" — 76% ABA, 129 competing — immediately winnable for hydrogel
+- "mascarilla de colageno" — 68.2% ABA, 602 competing — highest-ABA term in face masks (rank lost by Aug 10)
+- "rice water face wipes" — 95% ABA, 193 competing — highest-ABA term in wipes (rank lost by Aug 10)
+- "quia face mask" — 76% ABA, 129 competing — still unranked, immediately winnable for hydrogel
+- "pimple patches" — largest PPC spend line in the account; breakeven in July (~100% ACOS), underwater in August (~215% ACOS)
 - Variety/choice angle (12 scents per line) not communicated in any current title
 - Ceramide NP runs through every mask — K-beauty barrier positioning not leveraged
 
 COMPLIANCE — SAFE: "helps soften," "supports moisture barrier," "supports a radiant appearance," "clinically tested" (if applicable), "developed with K-beauty-grade actives"
 COMPLIANCE — AVOID: "treats," "cures," "anti-aging" without certification, "reduces wrinkles" as absolute
 
-WALMART CHANNEL (as of Jun 15, 2026)
+WALMART CHANNEL (last confirmed data as of Jun 15, 2026 — not updated in this pull)
    Makeup Wipes (live since Mar 2026, organic only, $0 ad spend):
    - Mar 2026: 20 units, $133 revenue
    - Apr 2026: 23 units, $172.90 revenue  
    - May 2026: 20 units, $193 revenue
    - 3-month total: $498.90 organic revenue
-   Face Masks: NOT yet on Walmart.
-   Hydrogel: NOT yet on Walmart.
-   Walmart opportunity: launch masks (top 5 scents) and hydrogel after Amazon stabilizes.`;
+   Face Masks: unblocked early May 2026, $27 in Jun 1-15 (first real sales) — not updated since.
+   Hydrogel: NOT yet on Walmart as of last check.
+   Blemish Patches: NOT yet on Walmart.
+   Walmart opportunity: launch hydrogel and blemish patches after Amazon organic issue is resolved.`;
 
 const PROD_DETAILS = {
-  masks: { name: 'PB & Jay Face Masks (Purenature)', focus: 'All 13 SKUs in one variation family sharing 2095 sessions. Alternate seller holds Buy Box at $9.99 vs $14.00 MSRP — 177 units remaining, ~1 month to sell-through. Conv% reflects her price, NOT listing quality. No action until sell-through.' },
-  wipes: { name: 'PB & Jay Makeup Wipes (Cleancare)', focus: '9% conversion is decent but zero organic rankings — PPC dependency is the constraint' },
-  hydrogel: { name: 'PB & Jay Hydrogel Face Mask', focus: '27 sessions, 0 units — visibility is the immediate problem, not product quality' }
+  masks: { name: 'PB & Jay Face Masks (Purenature)', focus: 'Jul: 618 sessions / 5 units / 0.8% conv, $30 revenue. Aug 1-15: 157 sessions / 4 units / 2.5% conv. Lost all organic rankings (avocado face mask #33, mascarilla de colageno #238, etc.) between Jul 27 and Aug 10 — same collapse hitting the whole account.' },
+  wipes: { name: 'PB & Jay Makeup Wipes (Cleancare)', focus: 'Jul: 671 sessions / 52 units / 7.8% conv, $364 revenue. Aug 1-15: 129 sessions / 2 units / 1.6% conv — 8 of 12 SKUs at zero sessions. Charcoal (former top seller) had ZERO sessions for all of July, predating the broader collapse. Vit C and Rose still Buy Box suppressed.' },
+  hydrogel: { name: 'PB & Jay Hydrogel Face Mask', focus: 'Jun/Jul: ~16-26 sessions, 0 units each month. Aug 1-15: 8 sessions, 4 units, $80, 50% conv — first real sales ever, even as its organic rankings disappeared entirely.' },
+  blemish: { name: 'PB & Jay Blemish Patches (Cleanspot + novelty)', focus: 'Launched Jul 2026: 366 sessions / 127 units / 34.7% conv, $1,191.50 revenue — strongest debut in the portfolio. Aug 1-15: 290 sessions / 13 units / 4.5% conv — same collapse pattern. PBJ0027 (Cleanspot Treatment) got 0 units in July vs. 30 for its sibling PBJ0028 — check listing health on that ASIN specifically.' }
 };
 
 function switchTab(id, btn) {
@@ -3042,7 +3244,7 @@ function discardPreview() {
 
   <div class="alert" style="background:var(--teal-light);border-color:rgba(0,31,96,0.2);color:var(--navy);">
     <span style="font-size:16px;flex-shrink:0;">📊</span>
-    <span><strong>PPC Strategy — PB &amp; Jay · May 2026.</strong> Makeup Wipes is the only line currently generating reliable PPC conversion (9% avg conv%). Face Masks remain on hold — alternate seller still active as of Jun 15 (1.1% conv%, 2 units from 184 sessions). PPC paused until Buy Box confirmed. Monitor weekly. Hydrogel Mask has near-zero organic visibility; PPC is the only traffic lever. This tab covers strategy, keyword targets, and TACOS context for each line.</span>
+    <span><strong>PPC Strategy — PB &amp; Jay · Updated with Jun–Aug 2026 spend data.</strong> Monthly PPC: Jun $184.99 spend / $243.20 sales → Jul $237.35 / $277.50 (85% ACOS) → Aug 1–14 $222.20 / $85.50 (~260% ACOS, partial month). <strong>Blemish Patches are now the newest active PPC line</strong> — "pimple patches" is the single largest search term in the account, breakeven in July but underwater in August. The ACOS deterioration tracks the organic ranking collapse covered on the Organic tab — treat PPC efficiency as a symptom of that broader issue, not a standalone problem to fix with bid changes alone.</span>
   </div>
 
   <!-- Alternate Seller Warning -->
@@ -3051,22 +3253,22 @@ function discardPreview() {
     <span><strong>Face Mask PPC: Hold all spend until the alternate seller sells through (~1 month).</strong> She has 177 units at $9.99 vs. our $14.00 — she holds the Buy Box because of price. PPC on the variation family currently funnels traffic to her checkout, not ours. No exceptions — even individual variant ASINs share sessions in the variation family. Resume PPC immediately when she sells through and we hold the Buy Box exclusively.</span>
   </div>
 
-  <!-- May Performance Summary -->
+  <!-- July/August Performance Summary -->
   <div class="sec">
-    <div class="sec-title">May 2026 — Blended PPC Context <span class="badge bg-amber">3 lines</span></div>
+    <div class="sec-title">July 2026 (Full) + Aug 1–14 (Partial) — Blended PPC Context <span class="badge bg-amber">4 lines</span></div>
     <div style="overflow-x:auto;">
     <table class="data">
-      <thead><tr><th>Product Line</th><th>Sessions</th><th>Units</th><th>Conv%</th><th>Revenue</th><th>Buy Box</th><th>PPC Priority</th></tr></thead>
+      <thead><tr><th>Product Line</th><th>Jul Sessions</th><th>Jul Units</th><th>Jul Conv%</th><th>Jul Revenue</th><th>Aug 1–14 Units</th><th>Aug 1–14 Conv%</th><th>PPC Priority</th></tr></thead>
       <tbody>
-        <tr class="our"><td><strong>Makeup Wipes (Cleancare)</strong></td><td>632</td><td>57</td><td><span class="pill pill-g">9.0%</span></td><td>$399</td><td>~97%</td><td>✅ Active — scale carefully</td></tr>
-        <tr><td>Face Masks — singles (Purenature)</td><td>~400 est.</td><td>19</td><td><span class="pill pill-g">10–12%*</span></td><td>$114</td><td>100%</td><td>⚠ Limited — target converting variants only</td></tr>
-        <tr><td>Face Masks — 12-pack (PBJ0025)</td><td>~1,695 est.</td><td>~0 attributed</td><td><span class="pill pill-a">~0% (alt. seller holds BB)</span></td><td>$0 attributed</td><td>0% (alt. seller @ $9.99)</td><td>🚫 Pause — ~1 month to sell-through</td></tr>
-        <tr><td>Hydrogel Face Mask</td><td>27</td><td>0</td><td><span class="pill pill-r">0%</span></td><td>$0</td><td>100%</td><td>🎯 Immediate — only traffic lever available</td></tr>
+        <tr class="our"><td><strong>Blemish Patches (6 SKUs)</strong></td><td>366</td><td>127</td><td><span class="pill pill-g">34.7%</span></td><td>$1,191.50</td><td>13</td><td><span class="pill pill-a">4.5%</span></td><td>✅ Best performer — protect "pimple patches" bids</td></tr>
+        <tr class="our"><td><strong>Makeup Wipes (Cleancare)</strong></td><td>671</td><td>52</td><td><span class="pill pill-g">7.8%</span></td><td>$364</td><td>2</td><td><span class="pill pill-r">1.6%</span></td><td>⚠ Charcoal (former top seller) at 0 sessions all July</td></tr>
+        <tr><td>Face Masks (Purenature, 13 SKUs)</td><td>618</td><td>5</td><td><span class="pill pill-r">0.8%</span></td><td>$30</td><td>4</td><td>2.5%</td><td>⚠ Still weak — check alt. seller / Buy Box status</td></tr>
+        <tr><td>Hydrogel Face Mask</td><td>16</td><td>0</td><td><span class="pill pill-r">0%</span></td><td>$0</td><td>4</td><td><span class="pill pill-g">50%</span></td><td>🎯 First real conversions in Aug — find out why</td></tr>
       </tbody>
     </table>
     </div>
     <div style="margin-top:12px;padding:12px 16px;background:var(--bg);border-radius:8px;font-size:13px;color:var(--ink2);line-height:1.7;">
-      *Face mask single-variant conversion: Vitamin C 11.1%, Rose 10.7%, Green Tea 12.0% — these three are confirmed converters. The blended 0.9% reflects the alternate seller holding the Buy Box at $9.99 vs. our $14.00 MSRP — she captures the sale, not a listing quality issue.
+      Every line except Hydrogel shows the same pattern: reasonable-to-strong July performance followed by a sharp conversion drop in the first two weeks of August, alongside the organic ranking collapse documented on the Organic tab. This is very likely one root cause showing up across the whole catalog, not four separate line-item problems.
     </div>
   </div>
 
